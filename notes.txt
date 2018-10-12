@@ -1,0 +1,21 @@
+Install antlr4 runtime
+pip install antlr4-python2-runtime 
+or
+pip install antlr4-python3-runtime
+
+Now install antlr4 to run the following in cmd
+Note that a path should be set to point to antlr4 bin
+antlr4 -Dlanguage=Python3 name.g4
+
+Note that file name should be same as grammar name
+
+This creates 3 files
+
+We will be using twitter api - tweepy
+pip install tweepy
+
+We can use textblob to do sentiment analisys
+pip install textblob
+
+For live streaming do this
+python -m textblob.download_corpora

@@ -1,0 +1,24 @@
+REQUIREMENTS and NOTES:
+pip install twitter
+
+If I need info on a class Twitter in twitter package
+Windows -> python -mpydoc twitter.Twitter
+Linux   -> pydoc twitter.Twitter
+Python  -> help(twitter.Twitter)
+
+
+In Twitter, you can limit search to locales using Yahoo Where on Earth 
+unique ids for those locales.
+WORLD_WOE_ID = 1
+US_WOE_ID = 23424977
+
+API calls like the world place tweets trending call, are rate limited
+We can see them in here -> https://developer.twitter.com/en/docs/basics/rate-limits.html
+ 
+To check if a Tweet has been retweeted, check if the retweeted_status
+node wrapper exists in the tweet you are looking
+
+When getting RT counts, we get the number, but it is possible we didn't
+get all the data for those who retweeted said tweet
+
+ON PAGE 54
