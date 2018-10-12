@@ -4,6 +4,9 @@ from grammar.ANCLAParser import ANCLAParser
 from grammar.ANCLAListener import ANCLAListener
 from processLine import processLine
 
+#Idea here is for the listener to just store important info
+#and pass that info to some function that calls all our modules
+
 
 class CustomANCLAListener(ANCLAListener) :
 
