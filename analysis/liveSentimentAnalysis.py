@@ -1,12 +1,14 @@
 import time
+import re
+import json
+import matplotlib.pyplot as plt
+from textblob import TextBlob
 from tweepy import Stream
 from tweepy import API
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
-import json
-from textblob import TextBlob
-import matplotlib.pyplot as plt
-import re
+from settingHandler import loadSettings
+from writeFile import writeToFile
 
 positive=0
 negative=0
@@ -14,6 +16,10 @@ compound=0
 initime=0
 count=0
 plt.ion()
+settings = loadSettings()
+
+tweetJSON = {}
+tweetJSON['Tweets'] = []
 
 def calctime(a):
     return time.time()-a
@@ -28,7 +34,6 @@ class listener(StreamListener):
     def on_data(self,data):
         all_data=json.loads(data)
         tweet=all_data["text"]
-        #username=all_data["user"]["screen_name"]
         tweet=" ".join(re.findall("[a-zA-Z]+", tweet))
         blob=TextBlob(tweet.strip())
 
@@ -59,16 +64,37 @@ class listener(StreamListener):
 
         compound=compound+senti
 
-        #Time in seconds
-        print("Time: " + str(t))
-        #Current count        
-        print("Tweet: " + str(count))
-        #Tweet text
-        #print(tweet.strip())
-        #Sentiment value
-        print("Sentiment value: " + str(senti) + "\n")
-        #Sentiment values
-        #print(str(positive) + ' ' + str(negative) + ' ' + str(compound))
+        if settings["verbose"] == True:
+            #Time in seconds
+            print("Time: " + str(t))
+            #Current count        
+            print("Tweet: " + str(count))
+            #Tweet text
+            print(tweet)
+            #Sentiment value
+            print("Sentiment value: " + str(senti) + "\n")
+            #Sentiment values
+            #print(str(positive) + ' ' + str(negative) + ' ' + str(compound))
+
+        if settings["datalog"] == True:
+            tweetJSON['Tweets'].append({
+                'tweet_id': all_data['id'],
+                'tweet_created': all_data['created_at'],
+                'text': all_data['text'],
+                'positive': positive,
+                'negative': negative,
+                'favorites': all_data['favorite_count'],
+                'retweets': all_data['retweet_count'],
+                'replies': all_data['reply_count'],
+                'user_name': all_data['user']['name'],
+                'user_handle': all_data['user']['screen_name'],
+                'verified': all_data['user']['verified'],
+                'followers': all_data['user']['followers_count'],
+                'friends': all_data['user']['friends_count'],
+                'user_likes': all_data['user']['favourites_count'],
+                'user_tweets': all_data['user']['statuses_count'],
+                'user_created': all_data['user']['created_at']    
+            })
         
         if count == 1:
             x = 70
@@ -121,6 +147,7 @@ def runLiveSentimentAnalysis(keyword, maxTweets = 300, maxTime = 0):
     maxTweets = int(maxTweets)
     maxTime = int(maxTime)
 
+    #Paste the keys in here
     CONSUMER_KEY = '5bKnzZoSPFqdyxxqaQ5K3UswP'
     CONSUMER_SECRET = 'L5jQ1a0Ya25aW6GRcMMrHpvrTSoRJGLp7vmA7nC9NeBVpaxIXX'
     OAUTH_TOKEN = '1250454920-HsnOaMRoTz8LRNQrvBCqX2SA4y7XCPlU9YLxSmr'
@@ -133,6 +160,8 @@ def runLiveSentimentAnalysis(keyword, maxTweets = 300, maxTime = 0):
     
     twitterStream =  Stream(auth=api.auth, listener=listener(count, maxTweets, maxTime))
     twitterStream.filter(track=[keyword])
+    writeToFile(tweetJSON, 'live-sentiment')
+  
 
 if __name__ == '__main__':
     runLiveSentimentAnalysis("Donald Trump", 0, 5)
