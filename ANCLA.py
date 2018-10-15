@@ -3,22 +3,28 @@ from antlr4 import *
 from grammar.ANCLALexer import ANCLALexer
 from grammar.ANCLAParser import ANCLAParser
 from CustomANCLAListener import CustomANCLAListener
+from settingHandler import loadSettings
  
 def main(argv):
     #user_input = FileStream(argv[1])
     print('ANCLA Command Line')
 
     while (True):
+        settings = loadSettings()
+        print("Current settings:\n" + str(settings))
         user_input = input("-> ")
         if user_input.lower() == "q" or user_input.lower() == "quit" or user_input.lower() == "exit":   
             break
 
+        #Boilerplate code for antlr4
         i_stream = InputStream(user_input)
         lexer = ANCLALexer(i_stream)
         stream = CommonTokenStream(lexer)
         parser = ANCLAParser(stream)
         parser.buildParseTrees = True
+        #Here we parse our input as a line
         tree = parser.line()
+        
         if parser.getNumberOfSyntaxErrors() < 1:
             ANCLA = CustomANCLAListener()
             walker = ParseTreeWalker()
