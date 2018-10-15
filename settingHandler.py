@@ -2,7 +2,7 @@ import pickle
 
 def loadSettings():
     try:
-        with open('data/settings', 'rb') as f:  
+        with open('settings', 'rb') as f:  
             return pickle.load(f)
     
     except FileNotFoundError:
@@ -11,5 +11,5 @@ def loadSettings():
         return settings
 
 def updateSettings(settings):
-    with open('data/settings', 'wb+') as f:
+    with open('settings', 'wb+') as f:
         pickle.dump(settings, f, protocol=-1)
