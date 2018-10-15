@@ -22,7 +22,7 @@ fragment RT         : 'retweets' | 'rt' | 'rts' | 'shares' | 'rtwt' | 'rtwts';
 
 FUNCTION            : 'analyze' | 'search' | 'store' | 'live' | 'config' ;
 
-SPECIFICATION       : FAV | RT | 'user' | 'credentials' | 'hashtags' | 'sentiment' | 'datalog' ;
+SPECIFICATION       : FAV | RT | 'user' | 'credentials' | 'hashtags' | 'sentiment' | 'datalog' | 'verbose' ;
 
 WORD				: (LOWERCASE | UPPERCASE | DIGIT | '_')+ ;
 
