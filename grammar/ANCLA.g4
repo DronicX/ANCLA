@@ -20,9 +20,9 @@ fragment DIGIT      : [0-9] ;
 fragment FAV        : 'favorites' | 'faves' | 'likes' | 'like' | 'hearts';
 fragment RT         : 'retweets' | 'rt' | 'rts' | 'shares' | 'rtwt' | 'rtwts';
 
-FUNCTION            : 'analyze' | 'search' | 'store' | 'live' | 'config' ;
+FUNCTION            : 'analyze' | 'search' | 'store' | 'live' | 'config' | 'help' ;
 
-SPECIFICATION       : FAV | RT | 'user' | 'credentials' | 'hashtags' | 'sentiment' | 'datalog' | 'verbose' ;
+SPECIFICATION       : FAV | RT | 'user' | 'credentials' | 'hashtags' | 'sentiment' | 'datalog' | 'verbose' | 'setting' | 'function';
 
 WORD				: (LOWERCASE | UPPERCASE | DIGIT | '_')+ ;
 
