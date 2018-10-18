@@ -26,10 +26,11 @@ def calctime(a):
 
 class listener(StreamListener):
 
-    def __init__(self, count, maxTweets, maxTime):
+    def __init__(self, count, maxTweets, maxTime, backup):
         self.count = count
         self.maxTweets = maxTweets
         self.maxTime = maxTime
+        self.backup = backup
 
     def on_data(self,data):
         all_data=json.loads(data)
@@ -81,8 +82,7 @@ class listener(StreamListener):
                 'tweet_id': all_data['id'],
                 'tweet_created': all_data['created_at'],
                 'text': all_data['text'],
-                'positive': positive,
-                'negative': negative,
+                'sentiment': senti,
                 'favorites': all_data['favorite_count'],
                 'retweets': all_data['retweet_count'],
                 'replies': all_data['reply_count'],
@@ -100,6 +100,9 @@ class listener(StreamListener):
             x = 70
             minusy = -20
             y = 20
+
+        if count == count % self.backup:
+            writeToFile(tweetJSON, 'live-sentiment')
         
         if t > x:
             x = t + 5
@@ -143,7 +146,7 @@ class listener(StreamListener):
     def on_error(self,status):
         print(status)
 
-def runLiveSentimentAnalysis(keyword, maxTweets = 300, maxTime = 0):
+def runLiveSentimentAnalysis(keyword, maxTweets = 300, maxTime = 0, backup = 10):
     maxTweets = int(maxTweets)
     maxTime = int(maxTime)
 
@@ -158,7 +161,7 @@ def runLiveSentimentAnalysis(keyword, maxTweets = 300, maxTime = 0):
 
     api = API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True, retry_count=10, retry_delay=5, retry_errors=5)
     
-    twitterStream =  Stream(auth=api.auth, listener=listener(count, maxTweets, maxTime))
+    twitterStream =  Stream(auth=api.auth, listener=listener(count, maxTweets, maxTime, backup))
     twitterStream.filter(track=[keyword])
     writeToFile(tweetJSON, 'live-sentiment')
   
