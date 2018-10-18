@@ -1,0 +1,30 @@
+ANCLA Help:
+
+ANCLA works the following way:
+
+function-specification parameter1 parameter2 ...
+
+A function is a general term such as analyze or search
+A specification is a term that specifies the type of function you want
+A parameter is a sort of detail you want in regards to the function
+
+A function-specification combination determines how many parameters are necesary and which aren't and what they mean.
+
+Let's see an example:
+You want to do sentiment analysis on 100 tweets with the words Donald Trump
+The code for this would be
+
+analyze-sentiment "Donald Trump" 100
+
+Here we speicify we want an sentiment analysis on 100 tweets with the words Donald Trump
+
+IMPORTANT:
+If the word you want is a single word, double quotation marks are not needed. If you want two words or more, then you have to the quotation marks otherwise, ANCLA takes the two words as two parameters. This is by design. This improves readability and helps mitigate confusion.
+
+For more help:
+Type 'help-function' to see a list of available functions in ANCLA
+Type 'help-function function' to see detailed info on one function
+As an example, in function we mean "analyze-sentiment"
+
+Type 'help-setttings' to see a list of available settings in ANCLA
+Type 'help-settings settings' to see detailed info on one setting
