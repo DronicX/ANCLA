@@ -27,4 +27,4 @@ Type 'help-function function' to see detailed info on one function
 As an example, in function we mean "analyze-sentiment"
 
 Type 'help-setttings' to see a list of available settings in ANCLA
-Type 'help-settings settings' to see detailed info on one setting
+Type 'help-settings settings' to see detailed info on one settingg
