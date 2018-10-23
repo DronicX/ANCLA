@@ -3,6 +3,10 @@ from analysis.sentimentAnalysis import runSentimentAnalysis
 from analysis.liveSentimentAnalysis import runLiveSentimentAnalysis
 from settingHandler import *
 
+#Our files
+from help.functionHelp import showFunc
+
+
 def processLine(function, specification, parameter):
     if function == "analyze":
             if specification == "sentiment":
@@ -45,13 +49,16 @@ def processLine(function, specification, parameter):
                 print("Please type true or false only to change verbose configuration")
             updateSettings(settings)
 
-        if function == "help":
-            if specification == "function":
-                #TO DO
-                #Delete return None after finished here
-                return None
+    if function == "help":
+        if specification == "function":
+            if len(parameter) == 0:
+                showFunc()
+            else:
+                showFunc(parameter[0])
+            #Delete return None after finished here
+            return None
 
-            if specification == "config":
-                #TO DO
-                #Delete return None after finished here
-                return None
+        if specification == "config":
+            #TO DO
+            #Delete return None after finished here
+            return None
