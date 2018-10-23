@@ -4,7 +4,7 @@ grammar ANCLA;
  * Parser Rules
  */
 
-line				: action (WS parameter)+ ;
+line				: action (WS parameter)* ;
 
 action              : FUNCTION '-' SPECIFICATION ;
 

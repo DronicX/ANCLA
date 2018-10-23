@@ -8,13 +8,13 @@ import sys
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16")
-        buf.write("\26\4\2\t\2\4\3\t\3\4\4\t\4\3\2\3\2\3\2\6\2\f\n\2\r\2")
-        buf.write("\16\2\r\3\3\3\3\3\3\3\3\3\4\3\4\3\4\2\2\5\2\4\6\2\3\3")
-        buf.write("\2\6\f\2\23\2\b\3\2\2\2\4\17\3\2\2\2\6\23\3\2\2\2\b\13")
-        buf.write("\5\4\3\2\t\n\7\r\2\2\n\f\5\6\4\2\13\t\3\2\2\2\f\r\3\2")
-        buf.write("\2\2\r\13\3\2\2\2\r\16\3\2\2\2\16\3\3\2\2\2\17\20\7\4")
-        buf.write("\2\2\20\21\7\3\2\2\21\22\7\5\2\2\22\5\3\2\2\2\23\24\t")
-        buf.write("\2\2\2\24\7\3\2\2\2\3\r")
+        buf.write("\27\4\2\t\2\4\3\t\3\4\4\t\4\3\2\3\2\3\2\7\2\f\n\2\f\2")
+        buf.write("\16\2\17\13\2\3\3\3\3\3\3\3\3\3\4\3\4\3\4\2\2\5\2\4\6")
+        buf.write("\2\3\3\2\6\f\2\24\2\b\3\2\2\2\4\20\3\2\2\2\6\24\3\2\2")
+        buf.write("\2\b\r\5\4\3\2\t\n\7\r\2\2\n\f\5\6\4\2\13\t\3\2\2\2\f")
+        buf.write("\17\3\2\2\2\r\13\3\2\2\2\r\16\3\2\2\2\16\3\3\2\2\2\17")
+        buf.write("\r\3\2\2\2\20\21\7\4\2\2\21\22\7\3\2\2\22\23\7\5\2\2\23")
+        buf.write("\5\3\2\2\2\24\25\t\2\2\2\25\7\3\2\2\2\3\r")
         return buf.getvalue()
 
 
@@ -108,19 +108,17 @@ class ANCLAParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 6
             self.action()
-            self.state = 9 
+            self.state = 11
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while True:
+            while _la==ANCLAParser.WS:
                 self.state = 7
                 self.match(ANCLAParser.WS)
                 self.state = 8
                 self.parameter()
-                self.state = 11 
+                self.state = 13
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==ANCLAParser.WS):
-                    break
 
         except RecognitionException as re:
             localctx.exception = re
@@ -162,11 +160,11 @@ class ANCLAParser ( Parser ):
         self.enterRule(localctx, 2, self.RULE_action)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 13
-            self.match(ANCLAParser.FUNCTION)
             self.state = 14
-            self.match(ANCLAParser.T__0)
+            self.match(ANCLAParser.FUNCTION)
             self.state = 15
+            self.match(ANCLAParser.T__0)
+            self.state = 16
             self.match(ANCLAParser.SPECIFICATION)
         except RecognitionException as re:
             localctx.exception = re
@@ -224,7 +222,7 @@ class ANCLAParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 17
+            self.state = 18
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ANCLAParser.WORD) | (1 << ANCLAParser.NUMBER) | (1 << ANCLAParser.LINK) | (1 << ANCLAParser.USER) | (1 << ANCLAParser.HASHTAG) | (1 << ANCLAParser.EMAIL) | (1 << ANCLAParser.STRING))) != 0)):
                 self._errHandler.recoverInline(self)
