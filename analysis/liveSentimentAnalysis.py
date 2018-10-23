@@ -115,7 +115,6 @@ class listener(StreamListener):
             minusx = t
 
         if not plt.fignum_exists(1) and count != 1:
-            plt.close()
             count = 0
             return False
 
@@ -129,7 +128,6 @@ class listener(StreamListener):
 
         if self.maxTweets != 0:
             if count==self.maxTweets:
-                plt.close()
                 count = 0
                 return False
             else:
@@ -137,7 +135,6 @@ class listener(StreamListener):
 
         if self.maxTime != 0:
             if t >= self.maxTime:
-                plt.close()
                 count = 0
                 return False
             else:
@@ -164,6 +161,10 @@ def runLiveSentimentAnalysis(keyword, maxTweets = 300, maxTime = 0, backup = 10)
     twitterStream =  Stream(auth=api.auth, listener=listener(count, maxTweets, maxTime, backup))
     twitterStream.filter(track=[keyword])
     writeToFile(tweetJSON, 'live-sentiment')
+    while plt.fignum_exists(1):
+        plt.show()
+        plt.pause(0.0001)
+    return tweetJSON
   
 
 if __name__ == '__main__':
