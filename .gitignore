@@ -43,3 +43,7 @@ settings
 __pycache__/
 grammar/__pycache__/
 .vscode/
+data/settings
+grammar/__pycache__/ANCLALexer.cpython-36.pyc
+grammar/__pycache__/ANCLAListener.cpython-36.pyc
+grammar/__pycache__/ANCLAParser.cpython-36.pyc
