@@ -45,13 +45,13 @@ def processLine(function, specification, parameter):
                 print("Please type true or false only to change verbose configuration")
             updateSettings(settings)
 
-        if function == "help":
-            if specification == "function":
-                #TO DO
-                #Delete return None after finished here
-                return None
+    if function == "help":
+        if specification == "function":
+            #TO DO
+            #Delete return None after finished here
+            return None
 
-            if specification == "config":
-                #TO DO
-                #Delete return None after finished here
-                return None
+        if specification == "config":
+            #TO DO
+            #Delete return None after finished here
+            return None
