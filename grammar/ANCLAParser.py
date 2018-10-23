@@ -8,13 +8,17 @@ import sys
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16")
-        buf.write("\27\4\2\t\2\4\3\t\3\4\4\t\4\3\2\3\2\3\2\7\2\f\n\2\f\2")
-        buf.write("\16\2\17\13\2\3\3\3\3\3\3\3\3\3\4\3\4\3\4\2\2\5\2\4\6")
-        buf.write("\2\3\3\2\6\f\2\24\2\b\3\2\2\2\4\20\3\2\2\2\6\24\3\2\2")
-        buf.write("\2\b\r\5\4\3\2\t\n\7\r\2\2\n\f\5\6\4\2\13\t\3\2\2\2\f")
-        buf.write("\17\3\2\2\2\r\13\3\2\2\2\r\16\3\2\2\2\16\3\3\2\2\2\17")
-        buf.write("\r\3\2\2\2\20\21\7\4\2\2\21\22\7\3\2\2\22\23\7\5\2\2\23")
-        buf.write("\5\3\2\2\2\24\25\t\2\2\2\25\7\3\2\2\2\3\r")
+        buf.write("!\4\2\t\2\4\3\t\3\4\4\t\4\3\2\3\2\7\2\13\n\2\f\2\16\2")
+        buf.write("\16\13\2\3\2\6\2\21\n\2\r\2\16\2\22\3\2\7\2\26\n\2\f\2")
+        buf.write("\16\2\31\13\2\3\3\3\3\3\3\3\3\3\4\3\4\3\4\2\2\5\2\4\6")
+        buf.write("\2\3\3\2\6\f\2 \2\b\3\2\2\2\4\32\3\2\2\2\6\36\3\2\2\2")
+        buf.write("\b\f\5\4\3\2\t\13\7\r\2\2\n\t\3\2\2\2\13\16\3\2\2\2\f")
+        buf.write("\n\3\2\2\2\f\r\3\2\2\2\r\27\3\2\2\2\16\f\3\2\2\2\17\21")
+        buf.write("\7\r\2\2\20\17\3\2\2\2\21\22\3\2\2\2\22\20\3\2\2\2\22")
+        buf.write("\23\3\2\2\2\23\24\3\2\2\2\24\26\5\6\4\2\25\20\3\2\2\2")
+        buf.write("\26\31\3\2\2\2\27\25\3\2\2\2\27\30\3\2\2\2\30\3\3\2\2")
+        buf.write("\2\31\27\3\2\2\2\32\33\7\4\2\2\33\34\7\3\2\2\34\35\7\5")
+        buf.write("\2\2\35\5\3\2\2\2\36\37\t\2\2\2\37\7\3\2\2\2\5\f\22\27")
         return buf.getvalue()
 
 
@@ -108,15 +112,36 @@ class ANCLAParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 6
             self.action()
-            self.state = 11
+            self.state = 10
+            self._errHandler.sync(self)
+            _alt = self._interp.adaptivePredict(self._input,0,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
+                    self.state = 7
+                    self.match(ANCLAParser.WS) 
+                self.state = 12
+                self._errHandler.sync(self)
+                _alt = self._interp.adaptivePredict(self._input,0,self._ctx)
+
+            self.state = 21
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==ANCLAParser.WS:
-                self.state = 7
-                self.match(ANCLAParser.WS)
-                self.state = 8
+                self.state = 14 
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                while True:
+                    self.state = 13
+                    self.match(ANCLAParser.WS)
+                    self.state = 16 
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    if not (_la==ANCLAParser.WS):
+                        break
+
+                self.state = 18
                 self.parameter()
-                self.state = 13
+                self.state = 23
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -160,11 +185,11 @@ class ANCLAParser ( Parser ):
         self.enterRule(localctx, 2, self.RULE_action)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 14
+            self.state = 24
             self.match(ANCLAParser.FUNCTION)
-            self.state = 15
+            self.state = 25
             self.match(ANCLAParser.T__0)
-            self.state = 16
+            self.state = 26
             self.match(ANCLAParser.SPECIFICATION)
         except RecognitionException as re:
             localctx.exception = re
@@ -222,7 +247,7 @@ class ANCLAParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 18
+            self.state = 28
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ANCLAParser.WORD) | (1 << ANCLAParser.NUMBER) | (1 << ANCLAParser.LINK) | (1 << ANCLAParser.USER) | (1 << ANCLAParser.HASHTAG) | (1 << ANCLAParser.EMAIL) | (1 << ANCLAParser.STRING))) != 0)):
                 self._errHandler.recoverInline(self)
