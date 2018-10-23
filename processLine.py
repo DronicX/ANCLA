@@ -11,7 +11,7 @@ def processLine(function, specification, parameter):
                 elif len(parameter) == 2:
                     runSentimentAnalysis(parameter[0], parameter[1])
                 else:
-                    runSentimentAnalysis(parameter[0], parameter[1])
+                    runSentimentAnalysis(parameter[0], parameter[1], parameter[2])
 
     if function == "live":
         if specification == "sentiment":
@@ -22,13 +22,14 @@ def processLine(function, specification, parameter):
             elif len(parameter) == 3:
                 runLiveSentimentAnalysis(parameter[0], parameter[1], parameter[2])
             else:
-                runLiveSentimentAnalysis(parameter[0], parameter[1], parameter[2])
+                runLiveSentimentAnalysis(parameter[0], parameter[1], parameter[2], parameter[3])
 
     if function == "config":
+        true = ['true', '1', 't', 'y', 'yes', 'yeah', 'yup', 'certainly', 'uh-huh']
+        false = ['false', '0', 'f', 'n', 'no', 'nop', 'nope', 'mm']
+
         if specification == "datalog":
             settings = loadSettings()
-            true = ['true', '1', 't', 'y', 'yes', 'yeah', 'yup', 'certainly', 'uh-huh']
-            false = ['false', '0', 'f', 'n', 'no', 'nop', 'nope', 'mm']
             
             if (parameter[0].lower() in true or parameter[0].lower() in false):
                 settings["datalog"] = parameter[0].lower() in true
