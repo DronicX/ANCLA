@@ -1,7 +1,7 @@
-import pickle
 from analysis.sentimentAnalysis import runSentimentAnalysis
 from analysis.liveSentimentAnalysis import runLiveSentimentAnalysis
 from settingHandler import *
+from help.showConfig import hConfig
 
 def processLine(function, specification, parameter):
     if function == "analyze":
@@ -11,7 +11,7 @@ def processLine(function, specification, parameter):
                 elif len(parameter) == 2:
                     runSentimentAnalysis(parameter[0], parameter[1])
                 else:
-                    runSentimentAnalysis(parameter[0], parameter[1])
+                    runSentimentAnalysis(parameter[0], parameter[1], parameter[2])
 
     if function == "live":
         if specification == "sentiment":
@@ -22,7 +22,7 @@ def processLine(function, specification, parameter):
             elif len(parameter) == 3:
                 runLiveSentimentAnalysis(parameter[0], parameter[1], parameter[2])
             else:
-                runLiveSentimentAnalysis(parameter[0], parameter[1], parameter[2])
+                runLiveSentimentAnalysis(parameter[0], parameter[1], parameter[2], parameter[3])
 
     if function == "config":
         if specification == "datalog":
@@ -51,6 +51,7 @@ def processLine(function, specification, parameter):
                 return None
 
             if specification == "config":
-                #TO DO
-                #Delete return None after finished here
+                # if parameter is default run generic script
+                # if parameter is datalog run datalog script
+                # if parameter is verbose run verbose script
                 return None
