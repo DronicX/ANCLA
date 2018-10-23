@@ -36,7 +36,7 @@ HASHTAG             : '#' WORD ;
 
 EMAIL               :  WORD '@' WORD ('.com' | '.edu' | '.org' | '.gov') ;
 
-STRING              : '"' WORD (WS WORD)* '"' ;
+STRING              : '"' WORD ((WS '-') WORD)* '"' ;
 
 WS			        : (' ' | '\t')+ ;
 
