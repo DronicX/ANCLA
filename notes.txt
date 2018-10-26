@@ -19,3 +19,7 @@ pip install textblob
 
 For live streaming do this
 python -m textblob.download_corpora
+
+When messing around with gitignore, run this afterwards
+git rm --cached -r .
+git add .
