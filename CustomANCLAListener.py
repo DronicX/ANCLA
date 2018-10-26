@@ -57,4 +57,6 @@ class CustomANCLAListener(ANCLAListener) :
         self.result = processLine(self.action, self.specification, self.parameter)
 
     def exitFunction(self, ctx:ANCLAParser.FunctionContext):
-        processFunction(self.result, ctx.FUNCTION().getText(), self.action, self.specification)
+        if ctx.VARIABLE() is not None:
+            variable = ctx.VARIABLE().getText().replace('.', '')
+        processFunction(self.result, ctx.FUNCTION().getText(), self.action, self.specification, variable)
