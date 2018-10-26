@@ -7,25 +7,26 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\21")
-        buf.write("\66\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\6\2\16")
-        buf.write("\n\2\r\2\16\2\17\3\2\6\2\23\n\2\r\2\16\2\24\5\2\27\n\2")
-        buf.write("\3\3\3\3\3\3\3\3\3\3\3\4\3\4\7\4 \n\4\f\4\16\4#\13\4\3")
-        buf.write("\4\6\4&\n\4\r\4\16\4\'\3\4\7\4+\n\4\f\4\16\4.\13\4\3\5")
-        buf.write("\3\5\3\5\3\5\3\6\3\6\3\6\2\2\7\2\4\6\b\n\2\3\3\2\t\17")
-        buf.write("\2\66\2\26\3\2\2\2\4\30\3\2\2\2\6\35\3\2\2\2\b/\3\2\2")
-        buf.write("\2\n\63\3\2\2\2\f\16\5\4\3\2\r\f\3\2\2\2\16\17\3\2\2\2")
-        buf.write("\17\r\3\2\2\2\17\20\3\2\2\2\20\27\3\2\2\2\21\23\5\6\4")
-        buf.write("\2\22\21\3\2\2\2\23\24\3\2\2\2\24\22\3\2\2\2\24\25\3\2")
-        buf.write("\2\2\25\27\3\2\2\2\26\r\3\2\2\2\26\22\3\2\2\2\27\3\3\2")
-        buf.write("\2\2\30\31\7\b\2\2\31\32\7\3\2\2\32\33\5\6\4\2\33\34\7")
-        buf.write("\4\2\2\34\5\3\2\2\2\35!\5\b\5\2\36 \7\20\2\2\37\36\3\2")
-        buf.write("\2\2 #\3\2\2\2!\37\3\2\2\2!\"\3\2\2\2\",\3\2\2\2#!\3\2")
-        buf.write("\2\2$&\7\20\2\2%$\3\2\2\2&\'\3\2\2\2\'%\3\2\2\2\'(\3\2")
-        buf.write("\2\2()\3\2\2\2)+\5\n\6\2*%\3\2\2\2+.\3\2\2\2,*\3\2\2\2")
-        buf.write(",-\3\2\2\2-\7\3\2\2\2.,\3\2\2\2/\60\7\6\2\2\60\61\7\5")
-        buf.write("\2\2\61\62\7\7\2\2\62\t\3\2\2\2\63\64\t\2\2\2\64\13\3")
-        buf.write("\2\2\2\b\17\24\26!\',")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\22")
+        buf.write("9\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\6\2\16\n")
+        buf.write("\2\r\2\16\2\17\3\2\6\2\23\n\2\r\2\16\2\24\5\2\27\n\2\3")
+        buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\7\4#\n\4\f\4\16")
+        buf.write("\4&\13\4\3\4\6\4)\n\4\r\4\16\4*\3\4\7\4.\n\4\f\4\16\4")
+        buf.write("\61\13\4\3\5\3\5\3\5\3\5\3\6\3\6\3\6\2\2\7\2\4\6\b\n\2")
+        buf.write("\3\3\2\n\20\29\2\26\3\2\2\2\4\30\3\2\2\2\6 \3\2\2\2\b")
+        buf.write("\62\3\2\2\2\n\66\3\2\2\2\f\16\5\4\3\2\r\f\3\2\2\2\16\17")
+        buf.write("\3\2\2\2\17\r\3\2\2\2\17\20\3\2\2\2\20\27\3\2\2\2\21\23")
+        buf.write("\5\6\4\2\22\21\3\2\2\2\23\24\3\2\2\2\24\22\3\2\2\2\24")
+        buf.write("\25\3\2\2\2\25\27\3\2\2\2\26\r\3\2\2\2\26\22\3\2\2\2\27")
+        buf.write("\3\3\2\2\2\30\31\7\b\2\2\31\32\7\3\2\2\32\33\5\6\4\2\33")
+        buf.write("\34\7\4\2\2\34\35\3\2\2\2\35\36\7\t\2\2\36\37\b\3\1\2")
+        buf.write("\37\5\3\2\2\2 $\5\b\5\2!#\7\21\2\2\"!\3\2\2\2#&\3\2\2")
+        buf.write("\2$\"\3\2\2\2$%\3\2\2\2%/\3\2\2\2&$\3\2\2\2\')\7\21\2")
+        buf.write("\2(\'\3\2\2\2)*\3\2\2\2*(\3\2\2\2*+\3\2\2\2+,\3\2\2\2")
+        buf.write(",.\5\n\6\2-(\3\2\2\2.\61\3\2\2\2/-\3\2\2\2/\60\3\2\2\2")
+        buf.write("\60\7\3\2\2\2\61/\3\2\2\2\62\63\7\6\2\2\63\64\7\5\2\2")
+        buf.write("\64\65\7\7\2\2\65\t\3\2\2\2\66\67\t\2\2\2\67\13\3\2\2")
+        buf.write("\2\b\17\24\26$*/")
         return buf.getvalue()
 
 
@@ -43,9 +44,9 @@ class ANCLAParser ( Parser ):
                      "'tendencies'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "ACTION", "SPECIFICATION", "FUNCTION", "WORD", "NUMBER", 
-                      "LINK", "USER", "HASHTAG", "EMAIL", "STRING", "WS", 
-                      "NEWLINE" ]
+                      "ACTION", "SPECIFICATION", "FUNCTION", "VARIABLE", 
+                      "WORD", "NUMBER", "LINK", "USER", "HASHTAG", "EMAIL", 
+                      "STRING", "WS", "NEWLINE" ]
 
     RULE_exp = 0
     RULE_function = 1
@@ -62,15 +63,16 @@ class ANCLAParser ( Parser ):
     ACTION=4
     SPECIFICATION=5
     FUNCTION=6
-    WORD=7
-    NUMBER=8
-    LINK=9
-    USER=10
-    HASHTAG=11
-    EMAIL=12
-    STRING=13
-    WS=14
-    NEWLINE=15
+    VARIABLE=7
+    WORD=8
+    NUMBER=9
+    LINK=10
+    USER=11
+    HASHTAG=12
+    EMAIL=13
+    STRING=14
+    WS=15
+    NEWLINE=16
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -170,6 +172,9 @@ class ANCLAParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def VARIABLE(self):
+            return self.getToken(ANCLAParser.VARIABLE, 0)
+
         def FUNCTION(self):
             return self.getToken(ANCLAParser.FUNCTION, 0)
 
@@ -205,6 +210,9 @@ class ANCLAParser ( Parser ):
             self.line()
             self.state = 25
             self.match(ANCLAParser.T__1)
+            self.state = 27
+            self.match(ANCLAParser.VARIABLE)
+            1
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -257,38 +265,38 @@ class ANCLAParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 27
+            self.state = 30
             self.action()
-            self.state = 31
+            self.state = 34
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
-                    self.state = 28
+                    self.state = 31
                     self.match(ANCLAParser.WS) 
-                self.state = 33
+                self.state = 36
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
 
-            self.state = 42
+            self.state = 45
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==ANCLAParser.WS:
-                self.state = 35 
+                self.state = 38 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
-                    self.state = 34
+                    self.state = 37
                     self.match(ANCLAParser.WS)
-                    self.state = 37 
+                    self.state = 40 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if not (_la==ANCLAParser.WS):
                         break
 
-                self.state = 39
+                self.state = 42
                 self.parameter()
-                self.state = 44
+                self.state = 47
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -332,11 +340,11 @@ class ANCLAParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_action)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 45
+            self.state = 48
             self.match(ANCLAParser.ACTION)
-            self.state = 46
+            self.state = 49
             self.match(ANCLAParser.T__2)
-            self.state = 47
+            self.state = 50
             self.match(ANCLAParser.SPECIFICATION)
         except RecognitionException as re:
             localctx.exception = re
@@ -394,7 +402,7 @@ class ANCLAParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 49
+            self.state = 52
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ANCLAParser.WORD) | (1 << ANCLAParser.NUMBER) | (1 << ANCLAParser.LINK) | (1 << ANCLAParser.USER) | (1 << ANCLAParser.HASHTAG) | (1 << ANCLAParser.EMAIL) | (1 << ANCLAParser.STRING))) != 0)):
                 self._errHandler.recoverInline(self)

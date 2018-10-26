@@ -6,7 +6,7 @@ grammar ANCLA;
 
 exp                 : function+ | line+;
 
-function            : (FUNCTION '(' line ')') ;
+function            : (FUNCTION '(' line ')') VARIABLE{1} ;
 
 line				: action WS* (WS+ parameter)* ;
 
@@ -29,6 +29,8 @@ ACTION              : 'analyze' | 'search' | 'store' | 'live' | 'config' | 'help
 SPECIFICATION       : FAV | RT | 'user' | 'credentials' | 'hashtags' | 'sentiment' | 'datalog' | 'verbose' | 'setting' | 'function';
 
 FUNCTION            : 'tendencies' ;
+
+VARIABLE            : '.favorites' | '.text' ;
 
 WORD				: (LOWERCASE | UPPERCASE | DIGIT | '_')+ ;
 
