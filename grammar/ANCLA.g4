@@ -4,9 +4,13 @@ grammar ANCLA;
  * Parser Rules
  */
 
+exp                 : function+ | line+;
+
+function            : (FUNCTION '(' line ')') ;
+
 line				: action WS* (WS+ parameter)* ;
 
-action              : FUNCTION '-' SPECIFICATION ;
+action              : ACTION '-' SPECIFICATION ;
 
 parameter           : NUMBER | LINK | USER | HASHTAG | EMAIL | STRING | WORD;
 
@@ -20,9 +24,11 @@ fragment DIGIT      : [0-9] ;
 fragment FAV        : 'favorites' | 'faves' | 'likes' | 'like' | 'hearts';
 fragment RT         : 'retweets' | 'rt' | 'rts' | 'shares' | 'rtwt' | 'rtwts';
 
-FUNCTION            : 'analyze' | 'search' | 'store' | 'live' | 'config' | 'help' ;
+ACTION              : 'analyze' | 'search' | 'store' | 'live' | 'config' | 'help' ;
 
 SPECIFICATION       : FAV | RT | 'user' | 'credentials' | 'hashtags' | 'sentiment' | 'datalog' | 'verbose' | 'setting' | 'function';
+
+FUNCTION            : 'tendencies' ;
 
 WORD				: (LOWERCASE | UPPERCASE | DIGIT | '_')+ ;
 

@@ -8,6 +8,24 @@ else:
 # This class defines a complete listener for a parse tree produced by ANCLAParser.
 class ANCLAListener(ParseTreeListener):
 
+    # Enter a parse tree produced by ANCLAParser#exp.
+    def enterExp(self, ctx:ANCLAParser.ExpContext):
+        pass
+
+    # Exit a parse tree produced by ANCLAParser#exp.
+    def exitExp(self, ctx:ANCLAParser.ExpContext):
+        pass
+
+
+    # Enter a parse tree produced by ANCLAParser#function.
+    def enterFunction(self, ctx:ANCLAParser.FunctionContext):
+        pass
+
+    # Exit a parse tree produced by ANCLAParser#function.
+    def exitFunction(self, ctx:ANCLAParser.FunctionContext):
+        pass
+
+
     # Enter a parse tree produced by ANCLAParser#line.
     def enterLine(self, ctx:ANCLAParser.LineContext):
         pass
