@@ -23,7 +23,7 @@ def main(argv):
         parser = ANCLAParser(stream)
         parser.buildParseTrees = True
         #Here we parse our input as a line
-        tree = parser.line()
+        tree = parser.exp()
         
         if parser.getNumberOfSyntaxErrors() < 1:
             ANCLA = CustomANCLAListener()
