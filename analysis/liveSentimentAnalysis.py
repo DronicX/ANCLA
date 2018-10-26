@@ -77,31 +77,31 @@ class listener(StreamListener):
             #Sentiment values
             #print(str(positive) + ' ' + str(negative) + ' ' + str(compound))
 
-        if settings["datalog"] == True:
-            tweetJSON['Tweets'].append({
-                'tweet_id': all_data['id'],
-                'tweet_created': all_data['created_at'],
-                'text': all_data['text'],
-                'sentiment': senti,
-                'favorites': all_data['favorite_count'],
-                'retweets': all_data['retweet_count'],
-                'replies': all_data['reply_count'],
-                'user_name': all_data['user']['name'],
-                'user_handle': all_data['user']['screen_name'],
-                'verified': all_data['user']['verified'],
-                'followers': all_data['user']['followers_count'],
-                'friends': all_data['user']['friends_count'],
-                'user_likes': all_data['user']['favourites_count'],
-                'user_tweets': all_data['user']['statuses_count'],
-                'user_created': all_data['user']['created_at']    
-            })
+        
+        tweetJSON['Tweets'].append({
+            'tweet_id': all_data['id'],
+            'tweet_created': all_data['created_at'],
+            'text': all_data['text'],
+            'sentiment': senti,
+            'favorites': all_data['favorite_count'],
+            'retweets': all_data['retweet_count'],
+            'replies': all_data['reply_count'],
+            'user_name': all_data['user']['name'],
+            'user_handle': all_data['user']['screen_name'],
+            'verified': all_data['user']['verified'],
+            'followers': all_data['user']['followers_count'],
+            'friends': all_data['user']['friends_count'],
+            'user_likes': all_data['user']['favourites_count'],
+            'user_tweets': all_data['user']['statuses_count'],
+            'user_created': all_data['user']['created_at']    
+        })
         
         if count == 1:
             x = 70
             minusy = -20
             y = 20
 
-        if count == count % self.backup:
+        if count == count % self.backup and settings["datalog"] == True:
             writeToFile(tweetJSON, 'live-sentiment')
         
         if t > x:
@@ -160,7 +160,9 @@ def runLiveSentimentAnalysis(keyword, maxTweets = 300, maxTime = 0, backup = 10)
     
     twitterStream =  Stream(auth=api.auth, listener=listener(count, maxTweets, maxTime, backup))
     twitterStream.filter(track=[keyword])
-    writeToFile(tweetJSON, 'live-sentiment')
+    if settings["datalog"] == True:
+        writeToFile(tweetJSON, 'live-sentiment')
+        
     while plt.fignum_exists(1):
         plt.show()
         plt.pause(0.0001)

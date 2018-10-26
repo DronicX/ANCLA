@@ -42,27 +42,27 @@ def runSentimentAnalysis(keyword, tweetNumber = 100, backup = 10):
                 #Sentiment value
                 print("Sentiment value: " + str(polarity) + "\n")
 
-            if settings["datalog"] == True:
-                tweetJSON['Tweets'].append({
-                    'tweet_id': tweet.id,
-                    'tweet_created': str(tweet.created_at),
-                    'text': tweet.text,
-                    'sentiment': polarity,
-                    'favorites': tweet.favorite_count,
-                    'retweets': tweet.retweet_count,
-                    'user_name': tweet.user.name,
-                    'user_handle': tweet.user.screen_name,
-                    'verified': tweet.user.verified,
-                    'followers': tweet.user.followers_count,
-                    'friends': tweet.user.friends_count,
-                    'user_likes': tweet.user.favourites_count,
-                    'user_tweets': tweet.user.statuses_count,
-                    'user_created': str(tweet.user.created_at)    
-                })
+            
+            tweetJSON['Tweets'].append({
+                'tweet_id': tweet.id,
+                'tweet_created': str(tweet.created_at),
+                'text': tweet.text,
+                'sentiment': polarity,
+                'favorites': tweet.favorite_count,
+                'retweets': tweet.retweet_count,
+                'user_name': tweet.user.name,
+                'user_handle': tweet.user.screen_name,
+                'verified': tweet.user.verified,
+                'followers': tweet.user.followers_count,
+                'friends': tweet.user.friends_count,
+                'user_likes': tweet.user.favourites_count,
+                'user_tweets': tweet.user.statuses_count,
+                'user_created': str(tweet.user.created_at)    
+            })
 
             number = number + 1
 
-            if number == number % backup:
+            if number == number % backup if settings["datalog"] == True:
                 writeToFile(tweetJSON, 'analyze-sentiment')
 
         except tweepy.TweepError as e:
@@ -71,7 +71,8 @@ def runSentimentAnalysis(keyword, tweetNumber = 100, backup = 10):
         except StopIteration:
             break
 
-    writeToFile(tweetJSON, 'analyze-sentiment')
+    if settings["datalog"] == True:
+        writeToFile(tweetJSON, 'analyze-sentiment')
        
     #Here we define axes
     plt.figure(num=1)
@@ -94,3 +95,5 @@ def runSentimentAnalysis(keyword, tweetNumber = 100, backup = 10):
     while plt.fignum_exists(1):
         plt.show()
         plt.pause(0.0001)
+
+    return tweetJSON
