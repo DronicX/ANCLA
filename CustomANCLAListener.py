@@ -3,6 +3,7 @@ from antlr4 import *
 from grammar.ANCLAParser import ANCLAParser
 from grammar.ANCLAListener import ANCLAListener
 from processLine import processLine
+from processFunction import processFunction
 
 #Idea here is for the listener to just store important info
 #and pass that info to some function that calls all our modules
@@ -11,14 +12,15 @@ from processLine import processLine
 class CustomANCLAListener(ANCLAListener) :
 
     def __init__(self):
-        self.function = ""
+        self.action = ""
         self.specification = ""
         self.parameter = []
+        self.result = {}
 
     def exitAction(self, ctx:ANCLAParser.ActionContext):
-        if ctx.FUNCTION() is not None and ctx.SPECIFICATION() is not None:
-            print("You want to " + ctx.FUNCTION().getText() + " " + ctx.SPECIFICATION().getText())
-            self.function = ctx.FUNCTION().getText()
+        if ctx.ACTION() is not None and ctx.SPECIFICATION() is not None:
+            print("You want to " + ctx.ACTION().getText() + " " + ctx.SPECIFICATION().getText())
+            self.action = ctx.ACTION().getText()
             self.specification = ctx.SPECIFICATION().getText()
 
     def exitParameter(self, ctx:ANCLAParser.ParameterContext):
@@ -52,4 +54,7 @@ class CustomANCLAListener(ANCLAListener) :
 
     def exitLine(self, ctx:ANCLAParser.ActionContext):
         #This function handles ALL analysis calls
-        processLine(self.function, self.specification, self.parameter)
+        self.result = processLine(self.action, self.specification, self.parameter)
+
+    def exitFunction(self, ctx:ANCLAParser.FunctionContext):
+        processFunction(self.result, ctx.FUNCTION().getText(), self.action, self.specification)
