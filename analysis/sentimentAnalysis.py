@@ -62,7 +62,7 @@ def runSentimentAnalysis(keyword, tweetNumber = 100, backup = 10):
 
             number = number + 1
 
-            if number == number % backup if settings["datalog"] == True:
+            if number == number % backup and settings["datalog"] == True:
                 writeToFile(tweetJSON, 'analyze-sentiment')
 
         except tweepy.TweepError as e:
