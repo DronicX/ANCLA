@@ -30,7 +30,7 @@ SPECIFICATION       : FAV | RT | 'user' | 'credentials' | 'hashtags' | 'sentimen
 
 FUNCTION            : 'tendencies' ;
 
-VARIABLE            : '.favorites' | '.text' ;
+VARIABLE            : '.favorites' | '.text' | '.verified' | '.retweets' ;
 
 WORD				: (LOWERCASE | UPPERCASE | DIGIT | '_')+ ;
 
