@@ -49,7 +49,7 @@ def processLine(action, specification, parameter):
             updateSettings(settings)
 
     if action == "help":
-        if specification == "action":
+        if specification == "function":
             if len(parameter) == 0:
                 showFunc()
             else:
