@@ -8,6 +8,9 @@ pip install --upgrade git+https://github.com/tweepy/tweepy.git
 if not installed
 pip install git+https://github.com/tweepy/tweepy.git
 
+Matplotlib for plots
+pip install matplotlib
+
 
 Now install antlr4 to run the following in cmd
 Note that a path should be set to point to antlr4 bin
