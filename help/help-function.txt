@@ -1,0 +1,25 @@
+__          __ ______  __       _________  _______  __       ___  ______
+\ \        / /|  ____||  |     |   ______||   _   ||   \    /   ||  ____|
+ \ \      / / | L____ |  |     |  |       |  | |  ||    \  /    || L__
+  \	\    / /  |  ____||  |     |  |       |  | |  ||  |\ \/ /|  ||  ____|
+   \ \/\/ /	  | L____ |  |____ |  |______ |  |_|  ||  | \__/ |  || L____
+	\_/\_/	  |______||_______||_________||_______||__|      |__||______|
+
+ANCLA (Automatic Net Content & Langauge Analysis), is a programming
+language dedicated to the statistics & analysis of useful data in a
+predetermined social network, such as Twitter.
+
+Help Guide:
+
+help-function
+
+usage: help-function ["--function"]
+
+There are several ANCLA functions that can be used:
+
+set preferred settings:
+	-- 
+
+run sentiment analysis (see also: help-function "analyze-sentiment" , help-function "live-sentiment"
+	-- analyze-sentiment	Run sentiment analysis on a set of tweets containing a specified hashtag	
+	-- live-sentiment		Run live sentiment analysis on a set of tweets containing a specified hashtag

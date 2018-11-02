@@ -3,6 +3,9 @@ from analysis.sentimentAnalysis import runSentimentAnalysis
 from analysis.liveSentimentAnalysis import runLiveSentimentAnalysis
 from settingHandler import *
 
+#Our files
+from help.functionHelp import showFunc
+
 def processLine(action, specification, parameter):
     if action == "analyze":
             if specification == "sentiment":
@@ -46,10 +49,11 @@ def processLine(action, specification, parameter):
             updateSettings(settings)
 
     if action == "help":
-        if specification == "action":
-            #TO DO
-            #Delete return None after finished here
-            return None
+        if specification == "function":
+            if len(parameter) == 0:
+                showFunc()
+            else:
+                showFunc(parameter[0])
 
         if specification == "config":
             #TO DO
