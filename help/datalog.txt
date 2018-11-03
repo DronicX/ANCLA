@@ -1,0 +1,25 @@
+	 ___       __      _    _ _ _ _	  _              ___
+	/ _ \     |   \   | |  |  _ _ _| | |            / _ \
+   / /_\ \    | |\ \  | |  | |		 | |           / /_\ \
+  /	_____ \   | | \ \ | |  | |		 | |          / _____ \
+ / /     \ \  | |  \ \| |  | |_ _ _	 | |_ _ _    / /     \ \
+/_/       \_\ |_|   \___|  |_ _ _ _| |_ _ _ _|  /_/       \_\
+
+ANCLA (Automatic Net Content & Langauge Analysis), is a programming
+language dedicated to the statistics & analysis of useful data in a
+predetermined social network, such as Twitter.
+
+Datalog Setting:
+
+This settings indicates whether or not you want to save in a file log the output of the functions that the user is using for analysis.
+
+usage: 
+
+-- config-datalog false   sets datalog to false, not letting the data collected to be stored on a log file
+
+-- config-datalog true    sets datalog to true, letting the data collected on console to be saved or stored on a log file
+
+Parameters:
+	--  BOOLEAN     true | false
+
+(see also: help-setting "verbose", "help-setting") For related topics.

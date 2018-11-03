@@ -1,0 +1,27 @@
+	 ___       __      _   _ _ _ _	 _             ___
+    / _ \     |   \   | | |  _ _ _|	| |           / _ \
+   / /_\ \    | |\ \  | | | |		| |          / /_\ \
+  / _____ \   | | \ \ | | | |       | |         / _____ \
+ / /     \ \  | |  \ \| | | |_ _ _	| |_ _ _   / /     \ \
+/_/       \_\ |_|   \___| |_ _ _ _|	|_ _ _ _| /_/       \_\
+
++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+| ANCLA (Automatic Net Content & Langauge Analysis), is a programming   |
+| language dedicated to the statistics & analysis of useful data in a   |
+| predetermined social network, such as Twitter.                        |
++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+
+Verbose Setting:
+
+This settings indicates whether or not you want to view tweets text and additional information such as like,retweets,sentiment analysis, among others on the console, depending of function outputs. 
+
+usage: 
+
+-- config-verbose false   sets verbose to false, doesn't let information of tweets to be shown on the console
+
+-- config-verbose true    sets verbose to true, let's information of tweets to be shown on the console
+
+Parameters:
+	--  BOOLEAN     true | false
+
+(see also: help-setting "datalog", "help-setting") For related topics.
