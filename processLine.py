@@ -2,9 +2,8 @@ import pickle
 from analysis.sentimentAnalysis import runSentimentAnalysis
 from analysis.liveSentimentAnalysis import runLiveSentimentAnalysis
 from settingHandler import *
-
-#Our files
 from help.functionHelp import showFunc
+from help.configHelp import showSettings
 
 def processLine(action, specification, parameter):
     if action == "analyze":
@@ -55,7 +54,9 @@ def processLine(action, specification, parameter):
             else:
                 showFunc(parameter[0])
 
-        if specification == "config":
-            #TO DO
-            #Delete return None after finished here
-            return None
+        if specification == "setting":
+            if len(parameter) == 0:
+                showSettings()
+            else:
+                showSettings(parameter[0])
+            
