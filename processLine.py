@@ -47,6 +47,8 @@ def processLine(action, specification, parameter):
             else:
                 print("Please type true or false only to change verbose configuration")
             updateSettings(settings)
+        
+        return None
 
     if action == "help":
         if specification == "function":
