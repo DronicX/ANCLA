@@ -1,9 +1,15 @@
 import pickle
 from settingHandler import *
+from functions.printData import printData
+from functions.average import average
 
 def processFunction(data, function, action, specification, variable = None):
-    if function == "tendencies":
-        if action == "analyze":
+    if function == "print":
+        printData(data, action, specification, variable)
+    
+    if function == "average":
+        average(data, action, specification, variable)
+        """if action == "analyze":
             if specification == "sentiment":
                 #Temp code on how to do an analysis. THis will be moved to another file
                 s = 0.0
@@ -20,7 +26,7 @@ def processFunction(data, function, action, specification, variable = None):
                 if variable is not None:
                     for tweet in data["Tweets"]:
                         print(tweet[variable])
-
+        
         if action == "live":
             if specification == "sentiment":
                 #Temp code on how to do an analysis. THis will be moved to another file
@@ -34,3 +40,4 @@ def processFunction(data, function, action, specification, variable = None):
                 if variable is not None:
                     for tweet in data["Tweets"]:
                         print(tweet[variable])
+        """
