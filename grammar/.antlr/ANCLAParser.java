@@ -26,7 +26,7 @@ public class ANCLAParser extends Parser {
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "'('", "')'", "'-'", null, null, "'tendencies'"
+		null, "'('", "')'", "'-'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, null, null, null, "ACTION", "SPECIFICATION", "FUNCTION", "VARIABLE", 
@@ -163,11 +163,11 @@ public class ANCLAParser extends Parser {
 	}
 
 	public static class FunctionContext extends ParserRuleContext {
-		public TerminalNode VARIABLE() { return getToken(ANCLAParser.VARIABLE, 0); }
 		public TerminalNode FUNCTION() { return getToken(ANCLAParser.FUNCTION, 0); }
 		public LineContext line() {
 			return getRuleContext(LineContext.class,0);
 		}
+		public TerminalNode VARIABLE() { return getToken(ANCLAParser.VARIABLE, 0); }
 		public FunctionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -177,6 +177,7 @@ public class ANCLAParser extends Parser {
 	public final FunctionContext function() throws RecognitionException {
 		FunctionContext _localctx = new FunctionContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_function);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -190,9 +191,16 @@ public class ANCLAParser extends Parser {
 			setState(25);
 			match(T__1);
 			}
-			setState(27);
-			match(VARIABLE);
-			1
+			setState(28);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==VARIABLE) {
+				{
+				setState(27);
+				match(VARIABLE);
+				}
+			}
+
 			}
 		}
 		catch (RecognitionException re) {
@@ -238,7 +246,7 @@ public class ANCLAParser extends Parser {
 			action();
 			setState(34);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,3,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
@@ -250,7 +258,7 @@ public class ANCLAParser extends Parser {
 				}
 				setState(36);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,3,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			}
 			setState(45);
 			_errHandler.sync(this);
@@ -374,19 +382,20 @@ public class ANCLAParser extends Parser {
 	public static final String _serializedATN =
 		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\229\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\6\2\16\n\2\r\2\16\2\17\3\2\6\2\23\n\2\r"+
-		"\2\16\2\24\5\2\27\n\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\7\4#\n\4"+
-		"\f\4\16\4&\13\4\3\4\6\4)\n\4\r\4\16\4*\3\4\7\4.\n\4\f\4\16\4\61\13\4\3"+
-		"\5\3\5\3\5\3\5\3\6\3\6\3\6\2\2\7\2\4\6\b\n\2\3\3\2\n\20\29\2\26\3\2\2"+
-		"\2\4\30\3\2\2\2\6 \3\2\2\2\b\62\3\2\2\2\n\66\3\2\2\2\f\16\5\4\3\2\r\f"+
-		"\3\2\2\2\16\17\3\2\2\2\17\r\3\2\2\2\17\20\3\2\2\2\20\27\3\2\2\2\21\23"+
-		"\5\6\4\2\22\21\3\2\2\2\23\24\3\2\2\2\24\22\3\2\2\2\24\25\3\2\2\2\25\27"+
-		"\3\2\2\2\26\r\3\2\2\2\26\22\3\2\2\2\27\3\3\2\2\2\30\31\7\b\2\2\31\32\7"+
-		"\3\2\2\32\33\5\6\4\2\33\34\7\4\2\2\34\35\3\2\2\2\35\36\7\t\2\2\36\37\b"+
-		"\3\1\2\37\5\3\2\2\2 $\5\b\5\2!#\7\21\2\2\"!\3\2\2\2#&\3\2\2\2$\"\3\2\2"+
-		"\2$%\3\2\2\2%/\3\2\2\2&$\3\2\2\2\')\7\21\2\2(\'\3\2\2\2)*\3\2\2\2*(\3"+
-		"\2\2\2*+\3\2\2\2+,\3\2\2\2,.\5\n\6\2-(\3\2\2\2.\61\3\2\2\2/-\3\2\2\2/"+
-		"\60\3\2\2\2\60\7\3\2\2\2\61/\3\2\2\2\62\63\7\6\2\2\63\64\7\5\2\2\64\65"+
-		"\7\7\2\2\65\t\3\2\2\2\66\67\t\2\2\2\67\13\3\2\2\2\b\17\24\26$*/";
+		"\2\16\2\24\5\2\27\n\2\3\3\3\3\3\3\3\3\3\3\3\3\5\3\37\n\3\3\4\3\4\7\4#"+
+		"\n\4\f\4\16\4&\13\4\3\4\6\4)\n\4\r\4\16\4*\3\4\7\4.\n\4\f\4\16\4\61\13"+
+		"\4\3\5\3\5\3\5\3\5\3\6\3\6\3\6\2\2\7\2\4\6\b\n\2\3\3\2\n\20\2:\2\26\3"+
+		"\2\2\2\4\30\3\2\2\2\6 \3\2\2\2\b\62\3\2\2\2\n\66\3\2\2\2\f\16\5\4\3\2"+
+		"\r\f\3\2\2\2\16\17\3\2\2\2\17\r\3\2\2\2\17\20\3\2\2\2\20\27\3\2\2\2\21"+
+		"\23\5\6\4\2\22\21\3\2\2\2\23\24\3\2\2\2\24\22\3\2\2\2\24\25\3\2\2\2\25"+
+		"\27\3\2\2\2\26\r\3\2\2\2\26\22\3\2\2\2\27\3\3\2\2\2\30\31\7\b\2\2\31\32"+
+		"\7\3\2\2\32\33\5\6\4\2\33\34\7\4\2\2\34\36\3\2\2\2\35\37\7\t\2\2\36\35"+
+		"\3\2\2\2\36\37\3\2\2\2\37\5\3\2\2\2 $\5\b\5\2!#\7\21\2\2\"!\3\2\2\2#&"+
+		"\3\2\2\2$\"\3\2\2\2$%\3\2\2\2%/\3\2\2\2&$\3\2\2\2\')\7\21\2\2(\'\3\2\2"+
+		"\2)*\3\2\2\2*(\3\2\2\2*+\3\2\2\2+,\3\2\2\2,.\5\n\6\2-(\3\2\2\2.\61\3\2"+
+		"\2\2/-\3\2\2\2/\60\3\2\2\2\60\7\3\2\2\2\61/\3\2\2\2\62\63\7\6\2\2\63\64"+
+		"\7\5\2\2\64\65\7\7\2\2\65\t\3\2\2\2\66\67\t\2\2\2\67\13\3\2\2\2\t\17\24"+
+		"\26\36$*/";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
