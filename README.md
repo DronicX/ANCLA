@@ -3,7 +3,7 @@
 **Automatic Net Content &amp; Language Analysis (ANCLA) is a programming language that facilitates extracting and analyzing data from social media. It's main focus now is the Twitter Social Media analysis. :hatched_chick:**
 #
 
-**Among this analysis include:**
+**Features Included:**
 
  - [x] Live-Sentiment Analysis
  - [x] Static-Sentiment Analysis
