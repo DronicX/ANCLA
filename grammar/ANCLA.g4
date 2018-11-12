@@ -26,7 +26,7 @@ fragment RT         : 'retweets' | 'rt' | 'rts' | 'shares' | 'rtwt' | 'rtwts';
 
 ACTION              : 'analyze' | 'search' | 'store' | 'live' | 'config' | 'help' ;
 
-SPECIFICATION       : FAV | RT | 'user' | 'credentials' | 'hashtags' | 'sentiment' | 'datalog' | 'verbose' | 'setting' | 'function' | 'action' ;
+SPECIFICATION       : FAV | RT | 'user' | 'credentials' | 'hashtags' | 'sentiment' | 'datalog' | 'verbose' | 'setting' | 'function' | 'action' | 'lexical' ;
 
 FUNCTION            : 'average' | 'print' ;
 
