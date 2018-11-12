@@ -1,7 +1,7 @@
 #This is our help-action file reader. The user may input 'help-action' wih or without a parameter
 #In doing so, the proper text file with detailed information will be printed onto the console
 
-def showFunc(fileName="help-action"):
+def action_showFunc(fileName="help-action"):
     try:
         with open("help/" + fileName + ".txt", 'r') as helpFile:
             for line in helpFile:

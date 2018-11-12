@@ -89,7 +89,7 @@ def runSentimentAnalysis(keyword, tweetNumber = 100, backup = 10):
     averagePolarity = (sum(polarity_list))/(len(polarity_list))
     averagePolarity = "{0:.0f}%".format(averagePolarity * 100)
     time  = datetime.now().strftime("At: %H:%M\nOn: %m-%d-%y")
-    plt.text(1, 1.25, "Average Sentiment:  " + str(averagePolarity) + "\n" + time, fontsize=12, bbox = dict(facecolor='none', edgecolor='black', boxstyle='square, pad = 1'))
+    plt.text(1, 1.25, "Average Polarity:  " + str(averagePolarity) + "\n" + time, fontsize=12, bbox = dict(facecolor='none', edgecolor='black', boxstyle='square, pad = 1'))
 
     plt.title("Sentiment of " + keyword + " on Twitter") 
     plt.xlabel("Number of Tweets")

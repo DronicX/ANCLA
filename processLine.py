@@ -1,10 +1,12 @@
 import pickle
 from analysis.sentimentAnalysis import runSentimentAnalysis
 from analysis.liveSentimentAnalysis import runLiveSentimentAnalysis
+from analysis.lexicalDiversity import lexical_diversity
 from settingHandler import *
 
 #Our files
-from help.functionHelp import showFunc
+from help.actionHelp import action_showFunc
+from help.functionHelp import function_showFunc
 
 def processLine(action, specification, parameter):
     if action == "analyze":
@@ -15,7 +17,11 @@ def processLine(action, specification, parameter):
                     return runSentimentAnalysis(parameter[0], parameter[1])
                 else:
                     return runSentimentAnalysis(parameter[0], parameter[1], parameter[2])
-
+            if specification == "lexical":
+                if len(parameter) == 1:
+                    return lexical_diversity(parameter[0])
+                else:
+                    return lexical_diversity(parameter[0], parameter[1])
     if action == "live":
         if specification == "sentiment":
             if len(parameter) == 1:
@@ -46,14 +52,14 @@ def processLine(action, specification, parameter):
                 settings["verbose"] = parameter[0].lower() in true
             else:
                 print("Please type true or false only to change verbose configuration")
-            updateSettings(settings)
+            updateSettings(settings)   
 
     if action == "help":
         if specification == "function":
             if len(parameter) == 0:
-                showFunc()
+                function_showFunc()
             else:
-                showFunc(parameter[0])
+                function_showFunc(parameter[0])
 
         if specification == "config":
             #TO DO
@@ -62,6 +68,6 @@ def processLine(action, specification, parameter):
     if action == "help":
         if specification == "action":
             if len(parameter) == 0:
-                showFunc()
+                action_showFunc()
             else:
-                showFunc(parameter[0])
+                action_showFunc(parameter[0])
