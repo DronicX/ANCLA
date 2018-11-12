@@ -15,6 +15,13 @@ def processLine(action, specification, parameter):
                     return runSentimentAnalysis(parameter[0], parameter[1])
                 else:
                     return runSentimentAnalysis(parameter[0], parameter[1], parameter[2])
+            
+            if specification == "lexical":
+                if len(parameter) == 1:
+                    return lexical_diversity(parameter[0])
+                else:
+                    return lexical_diversity(parameter[0], parameter[1])
+
 
     if action == "live":
         if specification == "sentiment":
