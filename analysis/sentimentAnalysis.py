@@ -17,7 +17,7 @@ api = tweepy.API(auth)
 
 def runSentimentAnalysis(keyword, tweetNumber = 100, backup = 10):
     if backup == '0':
-        backup = 1
+        backup = '1'
 
     tweetNumber = int(tweetNumber)
 

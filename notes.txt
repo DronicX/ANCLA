@@ -3,6 +3,15 @@ pip install antlr4-python2-runtime
 or
 pip install antlr4-python3-runtime
 
+if python 3.7 use and already installed
+pip install --upgrade git+https://github.com/tweepy/tweepy.git
+if not installed
+pip install git+https://github.com/tweepy/tweepy.git
+
+Matplotlib for plots
+pip install matplotlib
+
+
 Now install antlr4 to run the following in cmd
 Note that a path should be set to point to antlr4 bin
 antlr4 -Dlanguage=Python3 name.g4
