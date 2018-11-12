@@ -16,6 +16,9 @@ auth.set_access_token(OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
 api = tweepy.API(auth)
 
 def runSentimentAnalysis(keyword, tweetNumber = 100, backup = 10):
+    if backup == '0':
+        backup = 1
+
     tweetNumber = int(tweetNumber)
 
     polarity_list = []
@@ -62,7 +65,7 @@ def runSentimentAnalysis(keyword, tweetNumber = 100, backup = 10):
 
             number = number + 1
 
-            if number == number % backup and settings["datalog"] == True:
+            if number == number % int(backup) and settings["datalog"] == True:
                 writeToFile(tweetJSON, 'analyze-sentiment')
 
         except tweepy.TweepError as e:

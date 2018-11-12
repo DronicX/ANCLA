@@ -59,3 +59,9 @@ def processLine(action, specification, parameter):
             #TO DO
             #Delete return None after finished here
             return None
+    if action == "help":
+        if specification == "action":
+            if len(parameter) == 0:
+                showFunc()
+            else:
+                showFunc(parameter[0])

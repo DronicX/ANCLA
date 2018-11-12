@@ -7,4 +7,4 @@ def showFunc(fileName="help-function"):
             for line in helpFile:
                 print(line)
     except FileNotFoundError:
-        print("Function doesn't exist.\nTry calling help-function without parameters to see a list of all available functions.")
+        print("function doesn't exist.\nTry calling help-function without parameters to see a list of all available functions.")

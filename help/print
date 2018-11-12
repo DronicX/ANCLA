@@ -1,0 +1,5 @@
+print
+
+usage: print("action").
+
+The print function prints all the data contained in a
