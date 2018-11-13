@@ -1,25 +1,17 @@
-__          __ ______  __       _________  _______  __       ___  ______
-\ \        / /|  ____||  |     |   ______||   _   ||   \    /   ||  ____|
- \ \      / / | L____ |  |     |  |       |  | |  ||    \  /    || L__
-  \	\    / /  |  ____||  |     |  |       |  | |  ||  |\ \/ /|  ||  ____|
-   \ \/\/ /	  | L____ |  |____ |  |______ |  |_|  ||  | \__/ |  || L____
-	\_/\_/	  |______||_______||_________||_______||__|      |__||______|
-
-ANCLA (Automatic Net Content & Langauge Analysis), is a programming
-language dedicated to the statistics & analysis of useful data in a
-predetermined social network, such as Twitter.
-
-Help Guide:
+Help Guide on Functions:
 
 help-function
+
+The help-function function in ANCLA is a useful function call
+that displays a guide to know which functions are available. 
+There are general descriptions to know what each function does,
+and several call suggestion tom ore in depth description of 
+specific functions.
 
 usage: help-function ["--function"]
 
 There are several ANCLA functions that can be used:
 
-set preferred settings:
-	-- 
-
-run sentiment analysis (see also: help-function "analyze-sentiment" , help-function "live-sentiment"
-	-- analyze-sentiment	Run sentiment analysis on a set of tweets containing a specified hashtag	
-	-- live-sentiment		Run live sentiment analysis on a set of tweets containing a specified hashtag
+run different functions (see also: help-function "print" , help-function "average")
+	-- print      Prints all or one characteristic of a tweet     
+    -- average    Calculates the average of quantifiable all or one characteristic of a tweet
