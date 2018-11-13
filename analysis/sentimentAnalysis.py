@@ -50,7 +50,7 @@ def runSentimentAnalysis(keyword, tweetNumber = 100, backup = 10):
                 'tweet_id': tweet.id,
                 'tweet_created': str(tweet.created_at),
                 'text': tweet.text,
-                'sentiment': polarity,
+                'polarity': polarity,
                 'favorites': tweet.favorite_count,
                 'retweets': tweet.retweet_count,
                 'user_name': tweet.user.name,

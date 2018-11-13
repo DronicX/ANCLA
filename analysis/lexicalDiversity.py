@@ -12,6 +12,7 @@ api = tweepy.API(auth)
 # A function for computing lexical diversity in the text of a set of tweets
 def lexical_diversity(text, count=100):
     tokens = get_tweets(text,int(count))
+    print(tokens)
     return 1.0*len(set(tokens))/len(tokens)
 
 # Get tweets

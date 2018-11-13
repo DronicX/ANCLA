@@ -6,7 +6,7 @@ grammar ANCLA;
 
 exp                 : function+ | line+;
 
-function            : (FUNCTION '(' line ')') VARIABLE{1} ;
+function            : (FUNCTION '(' line ')') VARIABLE? ;
 
 line				: action WS* (WS+ parameter)* ;
 
@@ -26,11 +26,11 @@ fragment RT         : 'retweets' | 'rt' | 'rts' | 'shares' | 'rtwt' | 'rtwts';
 
 ACTION              : 'analyze' | 'search' | 'store' | 'live' | 'config' | 'help' ;
 
-SPECIFICATION       : FAV | RT | 'user' | 'credentials' | 'hashtags' | 'sentiment' | 'datalog' | 'verbose' | 'setting' | 'function';
+SPECIFICATION       : FAV | RT | 'user' | 'credentials' | 'hashtags' | 'sentiment' | 'datalog' | 'verbose' | 'setting' | 'function' | 'action' | 'lexical' ;
 
-FUNCTION            : 'tendencies' ;
+FUNCTION            : 'average' | 'print' ;
 
-VARIABLE            : '.favorites' | '.text' | '.verified' | '.retweets' ;
+VARIABLE            : '.tweet_id' | '.tweet_created' | '.text' | '.favorites' | '.retweets' | '.replies' | '.user_name' | '.user_handle' | '.verified' | '.followers' | '.friends' | '.user_likes' | '.user_tweets' | '.user_created' ;
 
 WORD				: (LOWERCASE | UPPERCASE | DIGIT | '_')+ ;
 
