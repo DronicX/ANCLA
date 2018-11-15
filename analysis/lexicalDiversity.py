@@ -42,8 +42,8 @@ def lexical_diversity(text, count=100):
         plt.ylabel("Lexical Diversity")
         plt.scatter(number_list, lexicalValue_list)
         plt.show
-        
-     except tweepy.TweepError as e:
+
+    except tweepy.TweepError as e:
             print(e.reason)
 
 # Get tweets
