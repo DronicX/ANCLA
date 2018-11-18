@@ -2,6 +2,7 @@ import pickle
 from analysis.sentimentAnalysis import runSentimentAnalysis
 from analysis.liveSentimentAnalysis import runLiveSentimentAnalysis
 from analysis.lexicalDiversity import lexical_diversity
+from analysis.competitorAnalysis import runComptetitorAnalysis
 from settingHandler import *
 
 #Our files
@@ -17,11 +18,16 @@ def processLine(action, specification, parameter):
                     return runSentimentAnalysis(parameter[0], parameter[1])
                 else:
                     return runSentimentAnalysis(parameter[0], parameter[1], parameter[2])
+
             if specification == "lexical":
                 if len(parameter) == 1:
                     return lexical_diversity(parameter[0])
                 else:
                     return lexical_diversity(parameter[0], parameter[1])
+
+            if specification == "competitor":
+                return runComptetitorAnalysis(parameter[0], parameter[1])
+
     if action == "live":
         if specification == "sentiment":
             if len(parameter) == 1:
@@ -67,6 +73,7 @@ def processLine(action, specification, parameter):
             #TO DO
             #Delete return None after finished here
             return None
+
     if action == "help":
         if specification == "action":
             if len(parameter) == 0:
