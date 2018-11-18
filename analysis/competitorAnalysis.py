@@ -6,7 +6,6 @@ from writeFile import writeToFile
 from loadCreds import loadCreds
 
 Creds = loadCreds()
-
 CONSUMER_KEY = Creds['CONSUMER_KEY']
 CONSUMER_SECRET = Creds['CONSUMER_SECRET']
 OAUTH_TOKEN = Creds['OAUTH_TOKEN']
