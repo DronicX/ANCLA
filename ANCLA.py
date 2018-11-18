@@ -8,7 +8,7 @@ from settingHandler import loadSettings
 def main(argv):
     #user_input = FileStream(argv[1])
     print('ANCLA Command Line')
-
+    
     while (True):
         settings = loadSettings()
         print("Current settings:\n" + str(settings))
