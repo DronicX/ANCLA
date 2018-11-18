@@ -5,11 +5,13 @@ from textblob import TextBlob #For Sentiment Analysis
 import matplotlib.pyplot as plt #For Graphing the Data
 from settingHandler import loadSettings
 from writeFile import writeToFile
+from loadCreds import loadCreds
 
-CONSUMER_KEY = '5bKnzZoSPFqdyxxqaQ5K3UswP'
-CONSUMER_SECRET = 'L5jQ1a0Ya25aW6GRcMMrHpvrTSoRJGLp7vmA7nC9NeBVpaxIXX'
-OAUTH_TOKEN = '1250454920-HsnOaMRoTz8LRNQrvBCqX2SA4y7XCPlU9YLxSmr'
-OAUTH_TOKEN_SECRET = '0RdkK0PgrdGKQgJTObxkwa1Q5IgcmWCUU1MmcouaytVJY'
+Creds = loadCreds()
+CONSUMER_KEY = Creds['CONSUMER_KEY']
+CONSUMER_SECRET = Creds['CONSUMER_SECRET']
+OAUTH_TOKEN = Creds['OAUTH_TOKEN']
+OAUTH_TOKEN_SECRET = Creds['OAUTH_TOKEN_SECRET']
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
