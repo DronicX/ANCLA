@@ -1,0 +1,17 @@
+Help Guide on Functions:
+
+help-function
+
+The help-function function in ANCLA is a useful function call
+that displays a guide to know which functions are available. 
+There are general descriptions to know what each function does,
+and several call suggestion tom ore in depth description of 
+specific functions.
+
+usage: help-function ["--function"]
+
+There are several ANCLA functions that can be used:
+
+run different functions (see also: help-function "print" , help-function "average")
+	-- print      Prints all or one characteristic of a tweet     
+    -- average    Calculates the average of quantifiable all or one characteristic of a tweet

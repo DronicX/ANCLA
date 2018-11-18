@@ -1,0 +1,21 @@
+analyze-sentiment
+
+usage: analyze-sentiment ["STRING"] [NUMBER]* [NUMBER]*
+
+The analyze-sentiment action uses TextBlob's sentiment analysis
+implementation to determine the attitude of the author of
+a text with respect to some specified topic.
+The implementtion uses a polarity score, which is a float 
+from -1 to 1. It signifies the emotion expressed in the text.
+It can be positive, negative or neutral. One being positive,
+0 neutral, and negative -1.
+
+The call generates a scatter plot of the polarity of all the tweets
+that contained the specified text parameter.
+
+parameters:
+    required:
+        -- STRING specified text to retrieve tweets that contain it
+    optional:
+        -- NUMBER quantity of tweets to be retrieved
+        -- NUMBER quantity of tweets per backup

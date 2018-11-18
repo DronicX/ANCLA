@@ -1,0 +1,17 @@
+Help Guide on Actions:
+
+help-action
+
+The help-action action in ANCLA is a useful action call
+that displays a guide to know which actions are available. 
+There are general descriptions to know what each action does,
+and several call suggestion tom ore in depth description of 
+specific actions.
+
+usage: help-action ["--action"]
+
+There are several ANCLA actions that can be used:
+
+run sentiment analysis (see also: help-action "analyze-sentiment" , help-action "live-sentiment"
+	-- analyze-sentiment	Run sentiment analysis on a set of tweets containing a specified hashtag	
+	-- live-sentiment		Run live sentiment analysis on a set of tweets containing a specified hashtag

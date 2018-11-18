@@ -4,9 +4,13 @@ grammar ANCLA;
  * Parser Rules
  */
 
-line				: action (WS parameter)* ;
+exp                 : function+ | line+;
 
-action              : FUNCTION '-' SPECIFICATION ;
+function            : (FUNCTION '(' line ')') VARIABLE? ;
+
+line				: action WS* (WS+ parameter)* ;
+
+action              : ACTION '-' SPECIFICATION ;
 
 parameter           : NUMBER | LINK | USER | HASHTAG | EMAIL | STRING | WORD;
 
@@ -20,9 +24,13 @@ fragment DIGIT      : [0-9] ;
 fragment FAV        : 'favorites' | 'faves' | 'likes' | 'like' | 'hearts';
 fragment RT         : 'retweets' | 'rt' | 'rts' | 'shares' | 'rtwt' | 'rtwts';
 
-FUNCTION            : 'analyze' | 'search' | 'store' | 'live' ;
+ACTION              : 'analyze' | 'search' | 'store' | 'live' | 'config' | 'help' ;
 
-SPECIFICATION       : FAV | RT | 'user' | 'credentials' | 'hashtags' | 'sentiment' ;
+SPECIFICATION       : FAV | RT | 'user' | 'credentials' | 'hashtags' | 'sentiment' | 'datalog' | 'verbose' | 'setting' | 'function' | 'action' | 'lexical' | 'competitor' ;
+
+FUNCTION            : 'average' | 'print' ;
+
+VARIABLE            : '.tweet_id' | '.tweet_created' | '.text' | '.favorites' | '.retweets' | '.replies' | '.user_name' | '.user_handle' | '.verified' | '.followers' | '.friends' | '.user_likes' | '.user_tweets' | '.user_created' ;
 
 WORD				: (LOWERCASE | UPPERCASE | DIGIT | '_')+ ;
 
@@ -36,7 +44,7 @@ HASHTAG             : '#' WORD ;
 
 EMAIL               :  WORD '@' WORD ('.com' | '.edu' | '.org' | '.gov') ;
 
-STRING              : '"' WORD (WS WORD)* '"' ;
+STRING              : '"' WORD ((WS | '-')* WORD)* '"' ;
 
 WS			        : (' ' | '\t')+ ;
 

@@ -1,0 +1,24 @@
+live-sentiment
+
+usage: live-sentiment ["STRING"] [NUMBER]* [NUMBER]* [NUMBER]*
+
+The live-sentiment action uses TextBlob's sentiment analysis
+implementation to determine the attitude of the author of
+a text with respect to some specified topic. It also uses
+Tweepy's live streaming API to retrieve Tweets in real time.
+The implementtion uses a polarity score, which is a float 
+from -1 to 1. It signifies the emotion expressed in the text.
+It can be positive, negative or neutral. One being positive,
+0 neutral, and negative -1.
+
+The call generates a scatter plot of the polarity of all the
+tweets: positive in blue, negative in red, and the sum of both
+in purple.
+
+parameters:
+    required:
+        -- STRING specified text to retrieve tweets that contain it
+    optional:
+        -- NUMBER quantity of tweets to be retrieved
+        -- NUMBER time in seconds before program stops running
+        -- NUMBER quantity of tweets per backup
