@@ -1,0 +1,48 @@
+ANCLA Help:
+ANCLA works the following way:
+action-specification parameter1 parameter2 ...
+
+An action is a general term such as analyze or search
+A specification is a term that specifies the type of action you want
+A parameter is an information you give to the action your performing
+A action-specification combination determines how many parameters are necesary and which aren't and what they mean.
+
+Let's see an example:
+You want to do sentiment analysis on 100 tweets with the words Donald Trump
+The code for this would be
+analyze-sentiment "Donald Trump" 100
+Here we speicify we want an sentiment analysis on 100 tweets with the words Donald Trump
+
+There are different types of parameters. Each action-specification use different ypes of parameters.
+These parameter types are:
+NUMBER - a number
+LINK - a link starts with http:// or https:// followed by the link itself
+USER - a twitter username. Must start with @
+HASHTAG - a twitter hashtag. Must start with #
+EMAIL - an email
+STRING - various words for searching. Must be encased by quotation marks
+WORD - just a single word without any space. Quotation marks not required
+
+FUNCTIONS:
+ANCLA has support for functions.
+Functions use the info gathered by some actions and runs a function with that info
+It works like this
+function(action-specification parameter1 parameter2 ...).variable
+
+As an example, lets say we want to find the average of likes from 100 tweets that contain the string Donald Trump
+We use this
+average(search-tweets "Donald Trump" 100).likes
+Note that having a .variable is optional running this
+average(search-tweets "Donald Trump" 100)
+runs an average on ALL info returned by search-tweets action
+
+For more help:
+Type 'help-action' to see a list of available functions in ANCLA
+Type 'help-action action' to see detailed info on one specific action
+As an example, you can use "help-action analyze-sentiment" to get info on analyze-sentiment
+
+Type 'help-setttings' to see a list of available settings in ANCLA
+Type 'help-settings setting' to see detailed info on one setting
+
+Type 'help-function' to see a list of available functions in ANCLA
+Type 'help-function function' to see detailed info on a specific function
