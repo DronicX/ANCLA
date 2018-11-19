@@ -16,6 +16,7 @@ class CustomANCLAListener(ANCLAListener) :
         self.specification = ""
         self.parameter = []
         self.result = {}
+        self.variable = None
 
     def exitAction(self, ctx:ANCLAParser.ActionContext):
         if ctx.ACTION() is not None and ctx.SPECIFICATION() is not None:
@@ -58,5 +59,5 @@ class CustomANCLAListener(ANCLAListener) :
 
     def exitFunction(self, ctx:ANCLAParser.FunctionContext):
         if ctx.VARIABLE() is not None:
-            variable = ctx.VARIABLE().getText().replace('.', '')
-        processFunction(self.result, ctx.FUNCTION().getText(), self.action, self.specification, variable)
+            self.variable = ctx.VARIABLE().getText().replace('.', '')
+        processFunction(self.result, ctx.FUNCTION().getText(), self.action, self.specification, self.variable)

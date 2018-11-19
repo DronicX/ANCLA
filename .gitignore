@@ -47,3 +47,8 @@ data/settings
 grammar/__pycache__/ANCLALexer.cpython-36.pyc
 grammar/__pycache__/ANCLAListener.cpython-36.pyc
 grammar/__pycache__/ANCLAParser.cpython-36.pyc
+grammar/__pycache__/ANCLAParser.cpython-36.pyc
+grammar/__pycache__/ANCLALexer.cpython-36.pyc
+grammar/__pycache__/ANCLAListener.cpython-36.pyc
+analysis/desktop.ini
+TwitterAPICreds

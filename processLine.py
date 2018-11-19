@@ -1,9 +1,13 @@
 import pickle
 from analysis.sentimentAnalysis import runSentimentAnalysis
 from analysis.liveSentimentAnalysis import runLiveSentimentAnalysis
+from analysis.lexicalDiversity import lexical_diversity
+from analysis.competitorAnalysis import runComptetitorAnalysis
 from settingHandler import *
-from help.functionHelp import showFunc
-from help.configHelp import showSettings
+
+#Our files
+from help.actionHelp import action_showFunc
+from help.functionHelp import function_showFunc
 
 def processLine(action, specification, parameter):
     if action == "analyze":
@@ -14,6 +18,15 @@ def processLine(action, specification, parameter):
                     return runSentimentAnalysis(parameter[0], parameter[1])
                 else:
                     return runSentimentAnalysis(parameter[0], parameter[1], parameter[2])
+
+            if specification == "lexical":
+                if len(parameter) == 1:
+                    return lexical_diversity(parameter[0])
+                else:
+                    return lexical_diversity(parameter[0], parameter[1])
+
+            if specification == "competitor":
+                return runComptetitorAnalysis(parameter[0], parameter[1])
 
     if action == "live":
         if specification == "sentiment":
@@ -46,17 +59,24 @@ def processLine(action, specification, parameter):
             else:
                 print("Please type true or false only to change verbose configuration")
             updateSettings(settings)
+        
+        return None
 
     if action == "help":
         if specification == "function":
             if len(parameter) == 0:
-                showFunc()
+                function_showFunc()
             else:
-                showFunc(parameter[0])
+                function_showFunc(parameter[0])
 
-        if specification == "setting":
+        if specification == "config":
+            #TO DO
+            #Delete return None after finished here
+            return None
+
+    if action == "help":
+        if specification == "action":
             if len(parameter) == 0:
-                showSettings()
+                action_showFunc()
             else:
-                showSettings(parameter[0])
-            
+                action_showFunc(parameter[0])

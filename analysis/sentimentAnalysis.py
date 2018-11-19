@@ -5,11 +5,13 @@ from textblob import TextBlob #For Sentiment Analysis
 import matplotlib.pyplot as plt #For Graphing the Data
 from settingHandler import loadSettings
 from writeFile import writeToFile
+from loadCreds import loadCreds
 
-CONSUMER_KEY = '5bKnzZoSPFqdyxxqaQ5K3UswP'
-CONSUMER_SECRET = 'L5jQ1a0Ya25aW6GRcMMrHpvrTSoRJGLp7vmA7nC9NeBVpaxIXX'
-OAUTH_TOKEN = '1250454920-HsnOaMRoTz8LRNQrvBCqX2SA4y7XCPlU9YLxSmr'
-OAUTH_TOKEN_SECRET = '0RdkK0PgrdGKQgJTObxkwa1Q5IgcmWCUU1MmcouaytVJY'
+Creds = loadCreds()
+CONSUMER_KEY = Creds['CONSUMER_KEY']
+CONSUMER_SECRET = Creds['CONSUMER_SECRET']
+OAUTH_TOKEN = Creds['OAUTH_TOKEN']
+OAUTH_TOKEN_SECRET = Creds['OAUTH_TOKEN_SECRET']
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
@@ -50,7 +52,7 @@ def runSentimentAnalysis(keyword, tweetNumber = 100, backup = 10):
                 'tweet_id': tweet.id,
                 'tweet_created': str(tweet.created_at),
                 'text': tweet.text,
-                'sentiment': polarity,
+                'polarity': polarity,
                 'favorites': tweet.favorite_count,
                 'retweets': tweet.retweet_count,
                 'user_name': tweet.user.name,
@@ -89,7 +91,7 @@ def runSentimentAnalysis(keyword, tweetNumber = 100, backup = 10):
     averagePolarity = (sum(polarity_list))/(len(polarity_list))
     averagePolarity = "{0:.0f}%".format(averagePolarity * 100)
     time  = datetime.now().strftime("At: %H:%M\nOn: %m-%d-%y")
-    plt.text(1, 1.25, "Average Sentiment:  " + str(averagePolarity) + "\n" + time, fontsize=12, bbox = dict(facecolor='none', edgecolor='black', boxstyle='square, pad = 1'))
+    plt.text(1, 1.25, "Average Polarity:  " + str(averagePolarity) + "\n" + time, fontsize=12, bbox = dict(facecolor='none', edgecolor='black', boxstyle='square, pad = 1'))
 
     plt.title("Sentiment of " + keyword + " on Twitter") 
     plt.xlabel("Number of Tweets")

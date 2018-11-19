@@ -10,23 +10,23 @@ def serializedATN():
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\22")
         buf.write("9\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\6\2\16\n")
         buf.write("\2\r\2\16\2\17\3\2\6\2\23\n\2\r\2\16\2\24\5\2\27\n\2\3")
-        buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\7\4#\n\4\f\4\16")
-        buf.write("\4&\13\4\3\4\6\4)\n\4\r\4\16\4*\3\4\7\4.\n\4\f\4\16\4")
-        buf.write("\61\13\4\3\5\3\5\3\5\3\5\3\6\3\6\3\6\2\2\7\2\4\6\b\n\2")
-        buf.write("\3\3\2\n\20\29\2\26\3\2\2\2\4\30\3\2\2\2\6 \3\2\2\2\b")
-        buf.write("\62\3\2\2\2\n\66\3\2\2\2\f\16\5\4\3\2\r\f\3\2\2\2\16\17")
-        buf.write("\3\2\2\2\17\r\3\2\2\2\17\20\3\2\2\2\20\27\3\2\2\2\21\23")
-        buf.write("\5\6\4\2\22\21\3\2\2\2\23\24\3\2\2\2\24\22\3\2\2\2\24")
-        buf.write("\25\3\2\2\2\25\27\3\2\2\2\26\r\3\2\2\2\26\22\3\2\2\2\27")
-        buf.write("\3\3\2\2\2\30\31\7\b\2\2\31\32\7\3\2\2\32\33\5\6\4\2\33")
-        buf.write("\34\7\4\2\2\34\35\3\2\2\2\35\36\7\t\2\2\36\37\b\3\1\2")
-        buf.write("\37\5\3\2\2\2 $\5\b\5\2!#\7\21\2\2\"!\3\2\2\2#&\3\2\2")
-        buf.write("\2$\"\3\2\2\2$%\3\2\2\2%/\3\2\2\2&$\3\2\2\2\')\7\21\2")
-        buf.write("\2(\'\3\2\2\2)*\3\2\2\2*(\3\2\2\2*+\3\2\2\2+,\3\2\2\2")
-        buf.write(",.\5\n\6\2-(\3\2\2\2.\61\3\2\2\2/-\3\2\2\2/\60\3\2\2\2")
-        buf.write("\60\7\3\2\2\2\61/\3\2\2\2\62\63\7\6\2\2\63\64\7\5\2\2")
-        buf.write("\64\65\7\7\2\2\65\t\3\2\2\2\66\67\t\2\2\2\67\13\3\2\2")
-        buf.write("\2\b\17\24\26$*/")
+        buf.write("\3\3\3\3\3\3\3\3\3\3\3\5\3\37\n\3\3\4\3\4\7\4#\n\4\f\4")
+        buf.write("\16\4&\13\4\3\4\6\4)\n\4\r\4\16\4*\3\4\7\4.\n\4\f\4\16")
+        buf.write("\4\61\13\4\3\5\3\5\3\5\3\5\3\6\3\6\3\6\2\2\7\2\4\6\b\n")
+        buf.write("\2\3\3\2\n\20\2:\2\26\3\2\2\2\4\30\3\2\2\2\6 \3\2\2\2")
+        buf.write("\b\62\3\2\2\2\n\66\3\2\2\2\f\16\5\4\3\2\r\f\3\2\2\2\16")
+        buf.write("\17\3\2\2\2\17\r\3\2\2\2\17\20\3\2\2\2\20\27\3\2\2\2\21")
+        buf.write("\23\5\6\4\2\22\21\3\2\2\2\23\24\3\2\2\2\24\22\3\2\2\2")
+        buf.write("\24\25\3\2\2\2\25\27\3\2\2\2\26\r\3\2\2\2\26\22\3\2\2")
+        buf.write("\2\27\3\3\2\2\2\30\31\7\b\2\2\31\32\7\3\2\2\32\33\5\6")
+        buf.write("\4\2\33\34\7\4\2\2\34\36\3\2\2\2\35\37\7\t\2\2\36\35\3")
+        buf.write("\2\2\2\36\37\3\2\2\2\37\5\3\2\2\2 $\5\b\5\2!#\7\21\2\2")
+        buf.write("\"!\3\2\2\2#&\3\2\2\2$\"\3\2\2\2$%\3\2\2\2%/\3\2\2\2&")
+        buf.write("$\3\2\2\2\')\7\21\2\2(\'\3\2\2\2)*\3\2\2\2*(\3\2\2\2*")
+        buf.write("+\3\2\2\2+,\3\2\2\2,.\5\n\6\2-(\3\2\2\2.\61\3\2\2\2/-")
+        buf.write("\3\2\2\2/\60\3\2\2\2\60\7\3\2\2\2\61/\3\2\2\2\62\63\7")
+        buf.write("\6\2\2\63\64\7\5\2\2\64\65\7\7\2\2\65\t\3\2\2\2\66\67")
+        buf.write("\t\2\2\2\67\13\3\2\2\2\t\17\24\26\36$*/")
         return buf.getvalue()
 
 
@@ -40,8 +40,7 @@ class ANCLAParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'('", "')'", "'-'", "<INVALID>", "<INVALID>", 
-                     "'tendencies'" ]
+    literalNames = [ "<INVALID>", "'('", "')'", "'-'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "ACTION", "SPECIFICATION", "FUNCTION", "VARIABLE", 
@@ -172,15 +171,15 @@ class ANCLAParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def VARIABLE(self):
-            return self.getToken(ANCLAParser.VARIABLE, 0)
-
         def FUNCTION(self):
             return self.getToken(ANCLAParser.FUNCTION, 0)
 
         def line(self):
             return self.getTypedRuleContext(ANCLAParser.LineContext,0)
 
+
+        def VARIABLE(self):
+            return self.getToken(ANCLAParser.VARIABLE, 0)
 
         def getRuleIndex(self):
             return ANCLAParser.RULE_function
@@ -200,6 +199,7 @@ class ANCLAParser ( Parser ):
 
         localctx = ANCLAParser.FunctionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_function)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 22
@@ -210,9 +210,14 @@ class ANCLAParser ( Parser ):
             self.line()
             self.state = 25
             self.match(ANCLAParser.T__1)
-            self.state = 27
-            self.match(ANCLAParser.VARIABLE)
-            1
+            self.state = 28
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==ANCLAParser.VARIABLE:
+                self.state = 27
+                self.match(ANCLAParser.VARIABLE)
+
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -269,14 +274,14 @@ class ANCLAParser ( Parser ):
             self.action()
             self.state = 34
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,4,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     self.state = 31
                     self.match(ANCLAParser.WS) 
                 self.state = 36
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,4,self._ctx)
 
             self.state = 45
             self._errHandler.sync(self)
