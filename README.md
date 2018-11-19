@@ -7,8 +7,8 @@
 
  - [x] Live-Sentiment Analysis
  - [x] Static-Sentiment Analysis
- - [ ] Competitiveness Analysis
- - [ ] Average of: Likes, Retweets, Reach, among others etc.
+ - [x] Competitiveness Analysis
+ - [x] Average of: Likes, Retweets, Reach, among others etc.
  - [x] Graphical Results
   
 
