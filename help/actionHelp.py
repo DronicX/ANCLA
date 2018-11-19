@@ -7,4 +7,4 @@ def action_showFunc(fileName="help-action"):
             for line in helpFile:
                 print(line)
     except FileNotFoundError:
-        print("action doesn't exist.\nTry calling help-action without parameters to see a list of all available actions.")
+        print("Action doesn't exist.\nTry calling help-action without parameters to see a list of all available actions.")
