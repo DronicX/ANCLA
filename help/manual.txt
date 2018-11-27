@@ -37,7 +37,7 @@ average(search-tweets "Donald Trump" 100)
 runs an average on ALL info returned by search-tweets action
 
 For more help:
-Type 'help-action' to see a list of available functions in ANCLA
+Type 'help-action' to see a list of available actions in ANCLA
 Type 'help-action action' to see detailed info on one specific action
 As an example, you can use "help-action analyze-sentiment" to get info on analyze-sentiment
 
