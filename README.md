@@ -26,6 +26,23 @@
 
 ## Configurations
 
+Configurations in ANCLA are a tool or medium to make your programming enviroment more comfortable. Offering a variety of settings to change at your dispossal to ease the coding experience. 
+
+ **Generic Setting:**
+ 
+Default setting that gives information of all other settings and configurations
+
+###### Usage: 
+```
+-- help-setting
+	> Gives a generic definition of the configurations or settings that can be changed in ANCLA
+```
+###### Parameters:
+```
+	NULL
+```
+(see also: help-setting "verbose", help-setting "datalog")
+
  **Datalog Setting:**
 
 This settings indicates whether or not you want to save in a file log the output of the functions that the user is using for analysis.
