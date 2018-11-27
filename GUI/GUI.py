@@ -1,9 +1,9 @@
-"""
+
 # GUI Creation
 
 from tkinter import*
 #from PIL import ImageTk,Image
-
+'''
 
 # Window Creation
 root = Tk()
@@ -25,7 +25,7 @@ clearbtn.grid()
 #label = Label (app, text = " This is ANCLA IDE")
 #label.grid()
 # Activate Window
-root.mainloop()
+root.mainloop()'''
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class Application(Frame):
 
@@ -164,4 +164,3 @@ helpmenu = Menu(menu)
 menu.add_cascade(label="Terminal", menu=helpmenu)
 app = Application (root)
 root.mainloop()
-"""
