@@ -33,10 +33,10 @@ This settings indicates whether or not you want to save in a file log the output
 
 ###### Usage: 
 ```
--- config-datalog false :    
+-- config-datalog false    
         > sets datalog to false, not letting the data collected to be stored on a log file
 
--- config-datalog true  :   
+-- config-datalog true     
        > sets datalog to true, letting the data collected on console to be saved or stored on a log file
 ```
 ###### Parameters:
@@ -51,9 +51,11 @@ This settings indicates whether or not you want to view tweets text and addition
 
 ###### Usage: 
 ```
--- config-verbose false   sets verbose to false, doesn't let information of tweets to be shown on the console
+-- config-verbose false   
+	> sets verbose to false, doesn't let information of tweets to be shown on the console
 
--- config-verbose true    sets verbose to true, let's information of tweets to be shown on the console
+-- config-verbose true    
+	> sets verbose to true, let's information of tweets to be shown on the console
 ```
 ###### Parameters:
 ```
@@ -61,4 +63,5 @@ This settings indicates whether or not you want to view tweets text and addition
 ```
 (see also: help-setting "datalog", "help-setting") For related topics.
   
-  
+## Functions
+## Analysis
