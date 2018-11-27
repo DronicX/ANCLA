@@ -12,7 +12,7 @@
  ```
  - [x] Functions 
  ```
-       -> Mean
+       -> Print
        -> Average
  ```
  - [x] Analysis
@@ -24,7 +24,7 @@
  - [x] Graphical Results
   
 
-## Configurations
+## :anchor: Configurations
 
 Configurations in ANCLA are a tool or medium to make your programming enviroment more comfortable, offering a variety of settings to change at your dispossal to ease the coding experience. 
 
@@ -79,7 +79,7 @@ This settings indicates whether or not you want to view tweets text and addition
 ```
 (see also: help-setting "datalog", "help-setting") For related topics.
   
-## Functions
+## :anchor: Functions
 
  **Generic Helper Function:**
  
@@ -114,21 +114,20 @@ The print function prints a specified characteristic or all characteristics of a
 
 **Average Function:**
 
-This settings indicates whether or not you want to view tweets text and additional information such as like,retweets,sentiment analysis, among others on the console, depending of function outputs. 
+The average function calculates the average of all quantifiable or a specified quantifiable variable.
 
 ###### Usage: 
 ```
--- config-verbose false   
-	> sets verbose to false, doesn't let information of tweets to be shown on the console
-
--- config-verbose true    
-	> sets verbose to true, let's information of tweets to be shown on the console
+-- average([ACTION]).variable   
+	> Sample Call: 
 ```
 ###### Parameters:
 ```
-	--  BOOLEAN     true | false
+  -- Required :     ACTION speficied ACTION to retrieve tweets (i.e. search)
+  -- Optional :     VARIABLE variable to print per tweet (i.e. faves)
 ```
-(see also: help-setting "datalog", "help-setting") For related topics.
+(see also: help-function "average", "help-function") For related topics.
 
-## Analysis
-## Graphs
+## :anchor: Analysis
+## :anchor: Graphs
+## :anchor: Demo
