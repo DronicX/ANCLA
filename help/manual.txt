@@ -13,7 +13,7 @@ The code for this would be
 analyze-sentiment "Donald Trump" 100
 Here we speicify we want an sentiment analysis on 100 tweets with the words Donald Trump
 
-There are different types of parameters. Each action-specification use different ypes of parameters.
+There are different types of parameters. Each action-specification use different types of parameters.
 These parameter types are:
 NUMBER - a number
 LINK - a link starts with http:// or https:// followed by the link itself

@@ -17,4 +17,4 @@ run sentiment analysis (see also: help-action "analyze-sentiment" , help-action 
 	-- live-sentiment		Run live sentiment analysis on a set of tweets containing a specified hashtag
 
 run lexical diversity analysis (see also: help-action "analyze-lexical")
-	-- analyze-lexical		Run lexial diversity analysis on the text of a set of tweets
+	-- analyze-lexical		Run lexical diversity analysis on the text of a set of tweets

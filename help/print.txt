@@ -1,5 +1,8 @@
 print
 
-usage: print("action").
+usage: print([ACTION]).VARIABLE*
 
-The print function prints all the data contained in a Tweet if no key is specified
+The print function prints a specified characteristic or all
+characteristics of a set of tweets.
+
+

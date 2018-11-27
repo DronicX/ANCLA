@@ -13,5 +13,5 @@ usage: help-function ["--function"]
 There are several ANCLA functions that can be used:
 
 run different functions (see also: help-function "print" , help-function "average")
-	-- print      Prints all or one characteristic of a tweet     
+	-- print      Prints all or one characteristic of a set of tweets     
     -- average    Calculates the average of quantifiable all or one characteristic of a tweet
