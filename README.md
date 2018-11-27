@@ -28,7 +28,7 @@
 
 Configurations in ANCLA are a tool or medium to make your programming enviroment more comfortable, offering a variety of settings to change at your dispossal to ease the coding experience. 
 
- **Generic Helper Setting:**
+ :heavy_plus_sign: **Generic Helper Setting:**
  
 Default setting that gives information of all other settings and configurations
 
