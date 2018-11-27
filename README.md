@@ -64,3 +64,4 @@ This settings indicates whether or not you want to view tweets text and addition
   
 ## Functions
 ## Analysis
+## Graphs
