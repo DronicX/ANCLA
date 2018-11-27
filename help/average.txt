@@ -1,2 +1,15 @@
 average
 
+usage: average([ACTION]).variable
+
+Sample call:
+    print(search-tweets "Text" 100).faves
+
+The average function calculates the average of all quantifiable or
+a specified quantifiable variable.
+
+parameters:
+    required:
+        -- ACTION specified ACTION to retrieve tweets (i.e. analyze)
+    optional:
+        -- VARIABLE variable to calculate average per tweet (i.e. faves)

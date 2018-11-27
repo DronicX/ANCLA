@@ -2,7 +2,14 @@ print
 
 usage: print([ACTION]).VARIABLE*
 
-The print function prints a specified characteristic or all
-characteristics of a set of tweets.
+Sample call:
+    print(search-tweets "Text" 100).faves
 
+The print function prints a specified variable or all
+variables of a set of tweets.
 
+parameters:
+    required:
+        -- ACTION speficied ACTION to retrieve tweets (i.e. search)
+    optional:
+        -- VARIABLE variable to print per tweet (i.e. faves)
