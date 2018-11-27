@@ -17,9 +17,13 @@ predetermined social network, such as Twitter.
 
 Configuration Guide:
 
-help-setting
+help-setting	
 
 usage: help-setting ["Setting Value"]
+
+ > Configurations in ANCLA are a tool or medium to make your programming enviroment more comfortable.
+ > Offering a variety of settings to change at your dispossal to ease the coding experience. 
+
 
 There are several ANCLA configuration settings:
 
