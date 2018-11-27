@@ -1,0 +1,17 @@
+analyze-lexical
+
+usage: analyze-lexical ["STRING"] [NUMBER]*
+
+Mathematically, the lexical diversity is an expression of the number
+of unique tokens in the text divided by the total number of tokens
+in the text. Lexical Diversity is a quantitative measure of
+an individual's or group's vocabulary.
+
+The call generates a scatter plot of the individual lexical diversity
+value of each tweet.
+
+parameters:
+    required:
+        -- STRING specified text to retrieve tweets that contain it
+    optional:
+        -- NUMBER quantity of tweets to be retrieved
