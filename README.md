@@ -28,7 +28,7 @@
 
 Configurations in ANCLA are a tool or medium to make your programming enviroment more comfortable, offering a variety of settings to change at your dispossal to ease the coding experience. 
 
- **Generic Setting:**
+ **Generic Helper Setting:**
  
 Default setting that gives information of all other settings and configurations
 
@@ -75,10 +75,60 @@ This settings indicates whether or not you want to view tweets text and addition
 ```
 ###### Parameters:
 ```
-	--  BOOLEAN     true | false
+	--  BOOLEAN :   true | false
 ```
 (see also: help-setting "datalog", "help-setting") For related topics.
   
 ## Functions
+
+ **Generic Helper Function:**
+ 
+The help-function in ANCLA is a useful function call that displays a guide to know which functions are available. There are general descriptions to know what each function does, and several call suggestion in depth description of specific functions.
+
+###### Usage: 
+```
+-- help-function
+	> Gives a generic definition of the functions available in ANCLA
+```
+###### Parameters:
+```
+	NULL
+```
+(see also: help-function "print" , help-function "average")
+
+ **Print Function:**
+
+The print function prints a specified characteristic or all characteristics of a set of tweets.
+
+###### Usage: 
+```
+-- print([ACTION]).VARIABLE*    
+        > Sample Call: print(search-tweets "Text" 100).faves
+```
+###### Parameters:
+```
+  -- Required :     ACTION speficied ACTION to retrieve tweets (i.e. search)
+  -- Optional :     VARIABLE variable to print per tweet (i.e. faves)
+```
+(see also: help-function "print", "help-function") For related topics.
+
+**Average Function:**
+
+This settings indicates whether or not you want to view tweets text and additional information such as like,retweets,sentiment analysis, among others on the console, depending of function outputs. 
+
+###### Usage: 
+```
+-- config-verbose false   
+	> sets verbose to false, doesn't let information of tweets to be shown on the console
+
+-- config-verbose true    
+	> sets verbose to true, let's information of tweets to be shown on the console
+```
+###### Parameters:
+```
+	--  BOOLEAN     true | false
+```
+(see also: help-setting "datalog", "help-setting") For related topics.
+
 ## Analysis
 ## Graphs
