@@ -21,7 +21,6 @@
        -> Lexical
        -> Sentiment
  ```
- - [x] Average of: Likes, Retweets, Reach, among others etc.
  - [x] Graphical Results
   
 
