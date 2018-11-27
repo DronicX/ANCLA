@@ -1,0 +1,36 @@
+	 ___        __      _    _ _ _ _	 _              ___
+	/ _ \      |   \   | |  |  _ _ _|	| |            / _ \
+   / /_\ \     | |\ \  | |  | |			| |           / /_\ \
+  /	_____ \    | | \ \ | |  | |			| |          / _____ \
+ / /     \ \   | |  \ \| |  | |_ _ _	| |_ _ _    / /     \ \
+/_/       \_\  |_|   \___|  |_ _ _ _|	|_ _ _ _|  /_/       \_\
+__          __ ______  __       _________  _______  __       ___  ______
+\ \        / /|  ____||  |     |   ______||   _   ||   \    /   ||  ____|
+ \ \      / / | L____ |  |     |  |       |  | |  ||    \  /    || L__
+  \	\    / /  |  ____||  |     |  |       |  | |  ||  |\ \/ /|  ||  ____|
+   \ \/\/ /	  | L____ |  |____ |  |______ |  |_|  ||  | \__/ |  || L____
+	\_/\_/	  |______||_______||_________||_______||__|      |__||______|
+
+ANCLA (Automatic Net Content & Langauge Analysis), is a programming
+language dedicated to the statistics & analysis of useful data in a
+predetermined social network, such as Twitter.
+
+Configuration Guide:
+
+help-setting	
+
+usage: help-setting ["Setting Value"]
+
+ > Configurations in ANCLA are a tool or medium to make your programming enviroment more comfortable.
+ > Offering a variety of settings to change at your dispossal to ease the coding experience. 
+
+
+There are several ANCLA configuration settings:
+
+set preferred settings:
+	--  datalog     is set as false as default, but can be changed to true using config-datalog true
+	--  verbose     is set as true as default, but can be changed to false using config-verbose false
+
+Configurations Available (see also: help-setting "verbose" , help-setting "datalog")
+	-- verbose	    Indicates whether or not you want to view tweets text and additional information on the console.	
+	-- datalog	    Indicates whether or not you want to make a file log of the tweets you have analyze.

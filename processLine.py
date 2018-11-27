@@ -13,7 +13,7 @@ def processLine(action, specification, parameter):
     if action == "analyze":
             if specification == "sentiment":
                 if len(parameter) == 1:
-                    return runSentimentAnalysis(parameter[0])
+                     runSentimentAnalysis(parameter[0])
                 elif len(parameter) == 2:
                     return runSentimentAnalysis(parameter[0], parameter[1])
                 else:
