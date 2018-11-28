@@ -48,11 +48,16 @@ class listener(StreamListener):
         global x
         global minusy
         global y
+        global settings
         
         count=count+1
 
         if count == 1:
             initime = time.time()
+            settings = loadSettings()
+            x = 70
+            minusy = -20
+            y = 20
 
         t = int(calctime(initime)) 
 
@@ -65,7 +70,7 @@ class listener(StreamListener):
                 negative=negative+sen.sentiment.polarity  
 
         compound=compound+senti
-
+        
         if settings["verbose"] == True:
             #Time in seconds
             print("Time: " + str(t))
@@ -97,12 +102,7 @@ class listener(StreamListener):
             'user_created': all_data['user']['created_at']    
         })
         
-        if count == 1:
-            x = 70
-            minusy = -20
-            y = 20
-
-        if count == count % self.backup and settings["datalog"] == True:
+        if count % self.backup == 0 and settings["datalog"] == True:
             writeToFile(tweetJSON, 'live-sentiment')
         
         if t > x:
@@ -128,11 +128,9 @@ class listener(StreamListener):
         plt.pause(0.0001)
 
         if self.maxTweets != 0:
-            if count==self.maxTweets:
+            if count==int(self.maxTweets):
                 count = 0
                 return False
-            else:
-                return True
 
         if self.maxTime != 0:
             if t >= self.maxTime:
@@ -147,6 +145,7 @@ class listener(StreamListener):
 def runLiveSentimentAnalysis(keyword, maxTweets = 300, maxTime = 0, backup = 10):
     maxTweets = int(maxTweets)
     maxTime = int(maxTime)
+    backup = int(backup)
 
     Creds = loadCreds()
     CONSUMER_KEY = Creds['CONSUMER_KEY']
