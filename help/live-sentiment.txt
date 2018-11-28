@@ -19,6 +19,6 @@ parameters:
     required:
         -- STRING specified text to retrieve tweets that contain it
     optional:
-        -- NUMBER quantity of tweets to be retrieved
-        -- NUMBER time in seconds before program stops running
+        -- NUMBER quantity of tweets to be retrieved (0 = infinite)
+        -- NUMBER time in seconds before program stops running (0 = infinite)
         -- NUMBER quantity of tweets per backup

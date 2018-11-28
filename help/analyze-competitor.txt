@@ -1,0 +1,11 @@
+analyze-competitor
+
+usage: analyze-competitor @USER @USER
+
+Compare the number of Followers, Tweets, Favorites and Friends
+of two specified Twitter users.
+
+parameter:
+    required:
+        -- USER First Twitter user to compare
+        -- USER Twitter user to compare with

@@ -102,7 +102,7 @@ class listener(StreamListener):
             minusy = -20
             y = 20
 
-        if count == count % self.backup and settings["datalog"] == True:
+        if count == count % int(self.backup) and settings["datalog"] == True:
             writeToFile(tweetJSON, 'live-sentiment')
         
         if t > x:

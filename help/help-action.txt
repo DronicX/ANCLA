@@ -18,3 +18,6 @@ run sentiment analysis (see also: help-action "analyze-sentiment" , help-action 
 
 run lexical diversity analysis (see also: help-action "analyze-lexical")
 	-- analyze-lexical		Run lexical diversity analysis on the text of a set of tweets
+
+run competitor analysis (see also: help-action "analyze-competitor")
+	-- analyze-competitor	Run competitor analysis between two Twitter users
