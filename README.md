@@ -165,21 +165,47 @@ The analyze-sentiment action uses TextBlob's sentiment analysis implementation t
 
 (see also: help-action "analyze-sentiment", "help-action") For related topics.
 
-**+ Average Function:**
+**+ Live Sentiment:**
 
-The average function calculates the average of all quantifiable or a specified quantifiable variable.
+The live-sentiment action uses TextBlob's sentiment analysis implementation to determine the attitude of the author of a text with respect to some specified topic. It also uses Tweepy's live streaming API to retrieve Tweets in real time. The implementtion uses a polarity score, which is a float from -1 to 1. It signifies the emotion expressed in the text. It can be positive, negative or neutral. One being positive, 0 neutral, and negative -1.
+
+The call generates a scatter plot of the polarity of all the tweets: positive in blue, negative in red, and the sum of both in purple.
 
 ###### Usage: 
 ```
--- average([ACTION]).variable   
+-- live-sentiment ["STRING"] [NUMBER]* [NUMBER]* [NUMBER]*   
 	> Sample Call: 
 ```
 ###### Parameters:
 ```
-  -- Required :     ACTION speficied ACTION to retrieve tweets (i.e. search)
-  -- Optional :     VARIABLE variable to print per tweet (i.e. faves)
+  -- Required :     STRING specified text to retrieve tweets that contain it
+  -- Optional :     NUMBER quantity of tweets to be retrieved
+  -- Optional :     NUMBER time in seconds before program stops running
+  -- Optional :     NUMBER quantity of tweets per backup
 ```
-(see also: help-function "average", "help-function") For related topics.
+###### Related Graph:
+
+(see also: help-action "live-sentiment", "help-action") For related topics.
+
+**+ Lexical Diversity:**
+
+Mathematically, the lexical diversity is an expression of the number of unique tokens in the text divided by the total number of tokens in the text. Lexical Diversity is a quantitative measure of an individual's or group's vocabulary.
+
+The call generates a scatter plot of the individual lexical diversity value of each tweet.
+
+###### Usage: 
+```
+-- analyze-lexical ["STRING"] [NUMBER]*   
+	> Sample Call: 
+```
+###### Parameters:
+```
+  -- Required :     STRING specified text to retrieve tweets that contain it
+  -- Optional :     NUMBER quantity of tweets to be retrieved
+```
+###### Related Graph:
+
+(see also: help-action "live-sentiment", "help-action") For related topics.
 ## :anchor: Graphs
 ## :anchor: Demo
 ## :anchor: Future Plans
