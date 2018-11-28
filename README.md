@@ -215,14 +215,15 @@ Compare the number of Followers, Tweets, Favorites and Friends of two specified 
 ###### Usage: 
 ```
 -- analyze-competitor @USER @USER   
-	> Sample Call: analyze-competitor @nickyminaj @justinbieber "Coca Cola" 50
+	> Sample Call: analyze-competitor @katyperry @justinbieber 
 ```
 ###### Parameters:
 ```
   -- Required :     USER First Twitter user to compare
   -- Required :     USER Twitter user to compare with
 ```
-###### Related Graph:
+###### Related Ouput:
+![competitor](https://user-images.githubusercontent.com/5660320/49120916-06980b80-f285-11e8-9233-51f568dc514f.png)
 
 (see also: help-action "analyze-competitor", "help-action") For related topics.
 ## :anchor: Graphs
@@ -231,5 +232,7 @@ Compare the number of Followers, Tweets, Favorites and Friends of two specified 
 > The inclusion of several social media to our platform: Facebook, Instagram, etc. :computer:
 
 > :anchor: ANCLA IDE:
+
+![beta gui ancla](https://user-images.githubusercontent.com/5660320/49120932-157ebe00-f285-11e8-93d6-8bec3d83c443.jpeg)
 
 > The integration or adaptation of multilines of code implementation
