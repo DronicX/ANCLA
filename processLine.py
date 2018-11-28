@@ -12,15 +12,6 @@ from help.functionHelp import function_showFunc
 
 def processLine(action, specification, parameter):
     if action == "analyze":
-<<<<<<< HEAD
-            if specification == "sentiment":
-                if len(parameter) == 1:
-                     runSentimentAnalysis(parameter[0])
-                elif len(parameter) == 2:
-                    return runSentimentAnalysis(parameter[0], parameter[1])
-                else:
-                    return runSentimentAnalysis(parameter[0], parameter[1], parameter[2])
-=======
         if specification == "sentiment":
             if len(parameter) == 1:
                 return runSentimentAnalysis(parameter[0])
@@ -28,7 +19,6 @@ def processLine(action, specification, parameter):
                 return runSentimentAnalysis(parameter[0], parameter[1])
             else:
                 return runSentimentAnalysis(parameter[0], parameter[1], parameter[2])
->>>>>>> origin/master
 
         if specification == "lexical":
             if len(parameter) == 1:
