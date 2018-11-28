@@ -184,6 +184,7 @@ The call generates a scatter plot of the polarity of all the tweets: positive in
   -- Optional :     NUMBER quantity of tweets per backup
 ```
 ###### Related Graph:
+![live-sentiment](https://user-images.githubusercontent.com/5660320/49121341-807cc480-f286-11e8-859d-5b16be6d6b47.png)
 
 (see also: help-action "live-sentiment", "help-action") For related topics.
 
@@ -226,10 +227,10 @@ Compare the number of Followers, Tweets, Favorites and Friends of two specified 
 ![competitor](https://user-images.githubusercontent.com/5660320/49120916-06980b80-f285-11e8-9233-51f568dc514f.png)
 
 (see also: help-action "analyze-competitor", "help-action") For related topics.
-## :anchor: Graphs
 ## :anchor: Demo
+## :anchor: About Us
 ## :anchor: Future Plans
 - **The inclusion of several social media to our platform: Facebook, Instagram, etc. :computer:**
 - **The integration or adaptation of multilines of code implementation**
 - **:anchor: ANCLA IDE:**
-![beta gui ancla](https://user-images.githubusercontent.com/5660320/49120932-157ebe00-f285-11e8-93d6-8bec3d83c443.jpeg)
+- ![beta gui ancla](https://user-images.githubusercontent.com/5660320/49120932-157ebe00-f285-11e8-93d6-8bec3d83c443.jpeg)
