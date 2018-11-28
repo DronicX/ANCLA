@@ -196,7 +196,7 @@ The call generates a scatter plot of the individual lexical diversity value of e
 ###### Usage: 
 ```
 -- analyze-lexical ["STRING"] [NUMBER]*   
-	> Sample Call: 
+	> Sample Call: analyze-lexical "Coca Cola" 50
 ```
 ###### Parameters:
 ```
@@ -204,8 +204,32 @@ The call generates a scatter plot of the individual lexical diversity value of e
   -- Optional :     NUMBER quantity of tweets to be retrieved
 ```
 ###### Related Graph:
+![lexical-diversity](https://user-images.githubusercontent.com/5660320/49120031-61c7ff00-f281-11e8-8a9f-f9af84c86cc0.png)
 
 (see also: help-action "live-sentiment", "help-action") For related topics.
+
+**+ Competitiveness Analysis:**
+
+Compare the number of Followers, Tweets, Favorites and Friends of two specified Twitter users.
+
+###### Usage: 
+```
+-- analyze-competitor @USER @USER   
+	> Sample Call: analyze-competitor @nickyminaj @justinbieber "Coca Cola" 50
+```
+###### Parameters:
+```
+  -- Required :     USER First Twitter user to compare
+  -- Required :     USER Twitter user to compare with
+```
+###### Related Graph:
+
+(see also: help-action "analyze-competitor", "help-action") For related topics.
 ## :anchor: Graphs
 ## :anchor: Demo
 ## :anchor: Future Plans
+> The inclusion of several social media to our platform: Facebook, Instagram, etc. :computer:
+
+> :anchor: ANCLA IDE:
+
+> The integration or adaptation of multilines of code implementation
