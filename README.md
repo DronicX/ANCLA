@@ -152,7 +152,7 @@ The analyze-sentiment action uses TextBlob's sentiment analysis implementation t
 ###### Usage: 
 ```
 -- analyze-sentiment ["STRING"] [NUMBER]* [NUMBER]*    
-        > Sample Call: 
+        > Sample Call: analyze-sentiment "Donald Trump" 100 10
 ```
 ###### Parameters:
 ```
@@ -161,6 +161,7 @@ The analyze-sentiment action uses TextBlob's sentiment analysis implementation t
   -- Optional :     NUMBER quantity of tweets per backup
 ```
 ###### Related Graph:
+![static-sentiment](https://user-images.githubusercontent.com/5660320/49119532-0a289400-f27f-11e8-9f1a-5cc4cb8a0773.png)
 
 (see also: help-action "analyze-sentiment", "help-action") For related topics.
 
@@ -181,3 +182,4 @@ The average function calculates the average of all quantifiable or a specified q
 (see also: help-function "average", "help-function") For related topics.
 ## :anchor: Graphs
 ## :anchor: Demo
+## :anchor: Future Plans
