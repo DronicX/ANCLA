@@ -229,6 +229,7 @@ Compare the number of Followers, Tweets, Favorites and Friends of two specified 
 (see also: help-action "analyze-competitor", "help-action") For related topics.
 ## :anchor: Demo
 Watch the ANCLA Demo on YouTube
+
 [![ANCLA Demo](http://img.youtube.com/vi/jH_WM6kCRuk/0.jpg)](http://www.youtube.com/watch?v=jH_WM6kCRuk "ANCLA Demo")
 
 Download Link For Video Demostration:
