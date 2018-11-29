@@ -228,9 +228,14 @@ Compare the number of Followers, Tweets, Favorites and Friends of two specified 
 
 (see also: help-action "analyze-competitor", "help-action") For related topics.
 ## :anchor: Demo
-## :anchor: About Us
+Download Link For Video Demostration:
+> https://drive.google.com/file/d/15OT7IU5jRWILm0Y2P-u9ArqDjQ5w-C5E/view?usp=sharing
 ## :anchor: Future Plans
 - **The inclusion of several social media to our platform: Facebook, Instagram, etc. :computer:**
 - **The integration or adaptation of multilines of code implementation**
 - **:anchor: ANCLA IDE:**
 - ![beta gui ancla](https://user-images.githubusercontent.com/5660320/49120932-157ebe00-f285-11e8-93d6-8bec3d83c443.jpeg)
+## :anchor: About Us
+- `Luis F. Domenech : Lead Software Developer & Designer`
+- `Chaliana Rolon   : Software Developer & Business Analyst`
+- `Luis R. Santiago : Project Manager & Software Developer`
