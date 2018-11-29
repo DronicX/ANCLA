@@ -10,7 +10,7 @@ def main(argv):
     
     while (True):
         settings = loadSettings()
-        print("Current settings:\n" + str(settings))
+        print("\nCurrent settings:\n" + str(settings))
         user_input = input("-> ")
         if user_input.lower() == "q" or user_input.lower() == "quit" or user_input.lower() == "exit":   
             break
